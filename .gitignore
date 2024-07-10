@@ -26,6 +26,9 @@
 # Visual Studio cache directory
 .vs/
 
+#ignore the external drive 
+._*
+
 # Gradle cache directory
 .gradle/
 
