@@ -9,7 +9,7 @@ public class StaminaBar : MonoBehaviour
 {
 
     public Slider staminaBar;
-    private int maxStamina=100;
+    private int maxStamina=150;
     private int currentStamina;
     private WaitForSeconds regenTick = new WaitForSeconds(.1f);
 
@@ -34,7 +34,7 @@ public class StaminaBar : MonoBehaviour
         if(currentStamina - amount >= 0)
         {
             //Debug.Log("Current move speed" + PlayerController.instance.moveSpeed);
-            PlayerController.instance.moveSpeed=3f;
+            PlayerController.instance.moveSpeed=7f;
             currentStamina-=amount;
             staminaBar.value=currentStamina;
 
@@ -61,10 +61,10 @@ public class StaminaBar : MonoBehaviour
     }
     private IEnumerator RegenStamina()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         while(currentStamina<maxStamina)
         {
-            currentStamina += maxStamina/100;
+            currentStamina += maxStamina/150;
             
             staminaBar.value=currentStamina;
     

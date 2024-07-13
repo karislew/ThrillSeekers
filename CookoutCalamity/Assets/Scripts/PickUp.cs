@@ -26,7 +26,7 @@ public class PickUp : MonoBehaviour
             if(itemHolding)
             {
                 //placed in from of player
-                itemHolding.transform.position = (transform.position + Direction);
+                itemHolding.transform.position = (holdSpot.transform.position + Direction);
                 itemHolding.transform.parent =null;
                 if(itemHolding.GetComponent<Rigidbody2D>())
                 {
@@ -38,7 +38,7 @@ public class PickUp : MonoBehaviour
                 //player position and direction (mag of 1), radius , mask to get items
                 //returns collider 2d
             else{
-                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, 1f, pickUpMask);
+                Collider2D pickUpItem = Physics2D.OverlapCircle(holdSpot.transform.position + Direction, 1f, pickUpMask);
                 if(pickUpItem)
                 {
                     itemHolding = pickUpItem.gameObject;
