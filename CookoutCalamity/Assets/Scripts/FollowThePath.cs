@@ -172,7 +172,21 @@ public class FollowThePath : MonoBehaviour
                 waypointIndex2++;
             }
         } 
-       
+
+        /*
+        if(waypointIndex2==endpoints.Length)
+            {
+                isStopped=false;
+                StartCoroutine(Waiting());
+                Move();
+                //transform.position= Vector3.MoveTowards(transform.position,endpoints[0].transform.position, moveSpeed*Time.deltaTime);
+                
+                
+                
+                //transform.position= Vector3.MoveTowards(transform.position,waypoints[waypointIndex].transform.position, moveSpeed*Time.deltaTime);
+                
+            }
+       */
        
         
     }
