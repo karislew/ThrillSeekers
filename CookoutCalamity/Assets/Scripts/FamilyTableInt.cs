@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class FamilyTableInt : MonoBehaviour
 {
     public Slider progressBar;
-    public float decrementRate = 5.0f; // Adjust this rate as needed
+    //public float decrementRate = 5.0f; // Adjust this rate as needed
+    public float decProgress;
 
 
     /*
@@ -24,7 +25,7 @@ public class FamilyTableInt : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Table"))
         {
-            DecreaseProgress(30);
+            DecreaseProgress(decProgress);
             
             Debug.Log("Enemy entered table trigger.");
         }
