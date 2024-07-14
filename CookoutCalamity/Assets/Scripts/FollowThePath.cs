@@ -15,7 +15,7 @@ public class FollowThePath : MonoBehaviour
     
     [SerializeField]
     public static FollowThePath instance;
-    public float moveSpeed=3f;
+    public float moveSpeed;
 
     //index of current waypoint
     private int waypointIndex = 0;
