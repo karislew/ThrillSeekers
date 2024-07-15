@@ -12,18 +12,21 @@ public class PlayerController : MonoBehaviour
     
 
     public Vector2 input;
-    private Animator animator;
+    //private Animator animator;
     public LayerMask solidObjectsLayer;
     
     public Transform grabDetect;
     public Transform boxHolder;
     private PickUp pickUp;
+
+    
     private void Awake()
     {
         instance = this;
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
     }
+    
 
     void Start()
     {
@@ -50,15 +53,15 @@ public class PlayerController : MonoBehaviour
             if (input != Vector2.zero)
             {
                 
-                animator.SetFloat("moveX",input.x);
-                animator.SetFloat("moveY",input.y);
-                StaminaBar.instance.UseStamina(5);
+                //animator.SetFloat("moveX",input.x);
+                //animator.SetFloat("moveY",input.y);
+                StaminaBar.instance.UseStamina(3);
                 
                 
 
                 var targetPos = transform.position;
-                var BoxtargetPos= boxHolder.transform.position;
-                var GrabtargetPos= grabDetect.transform.position;
+                //var BoxtargetPos= boxHolder.transform.position;
+                //var GrabtargetPos= grabDetect.transform.position;
                 
 
                 targetPos.x += input.x;
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
                
             }
         }
-        animator.SetBool("isMoving",isMoving);
+        //animator.SetBool("isMoving",isMoving);
 
   
     }
@@ -94,8 +97,8 @@ public class PlayerController : MonoBehaviour
         }
        
         transform.position = targetPos;
-        grabDetect.transform.position = transform.position;
-        boxHolder.transform.position = transform.position;
+        //grabDetect.transform.position = transform.position;
+        //boxHolder.transform.position = transform.position;
        
 
         isMoving = false;

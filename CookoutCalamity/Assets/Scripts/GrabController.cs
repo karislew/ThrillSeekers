@@ -32,7 +32,7 @@ public class GrabController : MonoBehaviour
 
         if(grabCheck.collider != null && grabCheck.collider.tag=="Box")
         {
-            if(Input.GetKey(KeyCode.G))
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Direction the player is facing for raycast " +  direction_player);
                 //isPressed=true;
