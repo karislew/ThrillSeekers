@@ -8,6 +8,7 @@ TagManager:
   - Table
   - Box
   - Sibling
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - SolidObjects
   - PickUp
-  - 
+  - Ground
   - 
   - 
   - 
