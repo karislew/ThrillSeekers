@@ -6,7 +6,7 @@ public class TestMovement : MonoBehaviour
 {
     
     //array of points to walk from one place to another 
-    public Transform[] waypoints;
+    private Transform[] waypoints;
 
 
     
@@ -26,18 +26,14 @@ public class TestMovement : MonoBehaviour
 
 
 
-    private void Awake()
+    public void Initialize(Transform[] waypoints)
     {
-        instance = this;
+        this.waypoints = waypoints;
+        target = waypoints[waypointIndex];
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //waypoints= WayPointManagement.waypoints;
-        //set enemy to position of the first waypoint
-        target= waypoints[waypointIndex];
-    }
+    
 
     void FixedUpdate()
     {
