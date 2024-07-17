@@ -13,14 +13,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
   - SolidObjects
   - PickUp
   - Ground
-  - 
+  - Table
   - 
   - 
   - 
@@ -54,6 +54,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4287387981
+    locked: 0
+  - name: Sibling
+    uniqueID: 1073889753
     locked: 0
   - name: Objects
     uniqueID: 2849154337
