@@ -14,30 +14,35 @@ public class DistractionInt : MonoBehaviour
     public float range = 5f;
     public string enemyTag="Enemy";
 
+    /*
      void Update()
     {
         if(target==null)
             return;
        
-        target.transform.position=siblingSpot.transform.position;
+        //target.transform.position=siblingSpot.transform.position;
     }
+    */
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == enemyTag)
         {
+            Debug.Log("TargetTT");
          
+            if(target==null){
+                nearestEnemy=col.gameObject;
+                target=nearestEnemy.transform;
+                nearestEnemy.GetComponent<TestMovement>().enabled=false;
+                //to fix the glitching
+                if(target.transform.position!=siblingSpot.transform.position)
+                {
+                    nearestEnemy.GetComponent<Rigidbody2D>().simulated=false;
+                    target.transform.position=siblingSpot.transform.position;
 
-            nearestEnemy=col.gameObject;
-            target=nearestEnemy.transform;
-            nearestEnemy.GetComponent<TestMovement>().enabled=false;
-            if(target.transform.position!=siblingSpot.transform.position)
-            {
-                Debug.Log("WASNT AT RIGHT POSITION");
-                target.transform.position=siblingSpot.transform.position;
-
+                }
+                StartCoroutine(Wait(nearestEnemy,siblingPosition));
             }
-            StartCoroutine(Wait(nearestEnemy,siblingPosition));
             
 
         }

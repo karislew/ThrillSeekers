@@ -6,12 +6,14 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     //enemy that we want to spawn (might need to make prefab)
-    public GameObject enemyPrefab;
+    //public GameObject enemyPrefab;
     //private Transform spawnPoint;
+
+    public EnemyManagement enemyManagement;
 
 
     //time between spawns 
-    private float timeBetweenSpawns=8f;
+    private float timeBetweenSpawns=7f;
     public WayPointManagement waypointManager;
 
     //time to spawn first 
@@ -43,7 +45,7 @@ public class EnemySpawn : MonoBehaviour
         //++ to get more enemies 
         for (int i=0;i<waveIndex;i++)
         {
-            //spawn after a few seconds if i wanted to spawn more than one enemy at a time 
+            //spawn after a few seconds if ai wanted to spawn more than one enemy at a time 
             WaveSpawnEnemy();
             yield return new WaitForSeconds(.5f);
         }
@@ -55,6 +57,7 @@ public class EnemySpawn : MonoBehaviour
     {
         Transform[] path = waypointManager.GetRandomPath();
         Transform spawnPoint= path[0];
+        GameObject enemyPrefab = enemyManagement.GetRandom();
         GameObject enemy= Instantiate(enemyPrefab, spawnPoint.position,spawnPoint.rotation);
         
         enemy.GetComponent<TestMovement>().Initialize(path);
