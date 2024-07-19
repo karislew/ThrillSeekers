@@ -546,7 +546,7 @@ Rigidbody2D:
     m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 24
+    m_Bits: 8
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -987,7 +987,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1445812959
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1359693801, guid: 683bfb17054cd4087b2ce899d39b8a70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 815494327}
   - component: {fileID: 815494329}
   - component: {fileID: 815494328}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1805,7 @@ GameObject:
   - component: {fileID: 894811365}
   - component: {fileID: 894811367}
   - component: {fileID: 894811366}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 1133507965}
   - component: {fileID: 1133507967}
   - component: {fileID: 1133507966}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2272,7 +2272,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1987545369
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -634400304, guid: 97e54cc7152c045529ae70a9063f42cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2946,7 +2946,7 @@ GameObject:
   - component: {fileID: 1501311963}
   - component: {fileID: 1501311962}
   - component: {fileID: 1501311961}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4152,7 +4152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1987545369
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -634400304, guid: 97e54cc7152c045529ae70a9063f42cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4306,7 +4306,7 @@ GameObject:
   - component: {fileID: 2019596900}
   - component: {fileID: 2019596902}
   - component: {fileID: 2019596901}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: StaminaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
