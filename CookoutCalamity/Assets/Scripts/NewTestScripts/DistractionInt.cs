@@ -6,9 +6,59 @@ public class DistractionInt : MonoBehaviour
 {
     // Start is called before the first frame update
     private Transform target;
+    public Transform siblingSpot;
+    public Transform siblingPosition;
+    private GameObject nearestEnemy=null;
+    private int triggerCounter=0;
 
     public float range = 5f;
     public string enemyTag="Enemy";
+
+     void FixedUpdate()
+    {
+        if(target==null)
+            return;
+       
+        target.transform.position=siblingSpot.transform.position;
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == enemyTag)
+        {
+            triggerCounter+=1;
+
+            nearestEnemy=col.gameObject;
+            target=nearestEnemy.transform;
+            StartCoroutine(Wait(nearestEnemy,siblingPosition));
+            
+
+        }
+        else
+        {
+            target=null;
+        }
+    }
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position,range);
+    }
+    
+    IEnumerator Wait(GameObject nearestEnemy, Transform siblingPosition)
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(nearestEnemy);
+        target=null;
+        transform.position=siblingPosition.position;
+    }
+    
+}
+
+
+/*
 
     // Update is called once per frame
     void Start()
@@ -38,33 +88,16 @@ public class DistractionInt : MonoBehaviour
             if (nearestEnemy!=null && shortestDistance <=range)
             {
                 target= nearestEnemy.transform;
+                TestMovement script= nearestEnemy.GetComponent<TestMovement>();
+                script.speed=0;
+                Debug.Log(script.speed);
+                StartCoroutine(Wait(nearestEnemy));
+                
             }
             else{
                 target=null;
             }
         }
     }
-    void Update()
-    {
-        if(target==null)
-            return;
 
-        target.transform.position=transform.position;
-        /*
-        Vector3 dir= target.position - transform.position;
-        Quaternion lookRotation  = Quaternion.LookRotation(dir);
-        Vector3 rotation = lookRotation.eulerAngles;
-        partToRotate.rotation= Quaternion.Euler(0f,rotation.y,0f);
-        */
-
-
-    }
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,range);
-    }
-    
-    
-    
-}
+    */
