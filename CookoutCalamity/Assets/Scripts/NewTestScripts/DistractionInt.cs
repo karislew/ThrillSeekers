@@ -9,28 +9,40 @@ public class DistractionInt : MonoBehaviour
     public Transform siblingSpot;
     public Transform siblingPosition;
     private GameObject nearestEnemy=null;
-    private int triggerCounter=0;
+    
 
     public float range = 5f;
     public string enemyTag="Enemy";
 
-     void FixedUpdate()
+    /*
+     void Update()
     {
         if(target==null)
             return;
        
-        target.transform.position=siblingSpot.transform.position;
+        //target.transform.position=siblingSpot.transform.position;
     }
+    */
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == enemyTag)
         {
-            triggerCounter+=1;
+            Debug.Log("TargetTT");
+         
+            if(target==null){
+                nearestEnemy=col.gameObject;
+                target=nearestEnemy.transform;
+                nearestEnemy.GetComponent<TestMovement>().enabled=false;
+                //to fix the glitching
+                if(target.transform.position!=siblingSpot.transform.position)
+                {
+                    nearestEnemy.GetComponent<Rigidbody2D>().simulated=false;
+                    target.transform.position=siblingSpot.transform.position;
 
-            nearestEnemy=col.gameObject;
-            target=nearestEnemy.transform;
-            StartCoroutine(Wait(nearestEnemy,siblingPosition));
+                }
+                StartCoroutine(Wait(nearestEnemy,siblingPosition));
+            }
             
 
         }
@@ -51,6 +63,7 @@ public class DistractionInt : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         Destroy(nearestEnemy);
+        yield return new WaitForSeconds(.1f);
         target=null;
         transform.position=siblingPosition.position;
     }
