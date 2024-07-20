@@ -399,12 +399,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732861188939941933, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
       propertyPath: m_Name
-      value: Win Lose Screen
+      value: Win Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 6878899728015510130, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f6870e27dbe10b84b83f34c8acdc3a55, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
