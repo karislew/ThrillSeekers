@@ -9,6 +9,7 @@ public class GameCountdown : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
+    public Slider progressBar;
     public GameObject player;
     private PTableInteract currentProgress_script;
     public float delay = 0.5f;
@@ -22,6 +23,7 @@ public class GameCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer += Time.deltaTime;
         if (timer > delay)
         {
@@ -39,20 +41,23 @@ public class GameCountdown : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
         }
-        else if (remainingTime <= 0 && currentProgress_script.currentProgress < 90)
+        //remainingTime <= 0 && currentProgress_script.currentProgress < 90
+        else if (remainingTime <= 0 && progressBar.value < 90)
         {
+            Debug.Log("IN THIS " + remainingTime);
             remainingTime = 0;
             SceneManager.LoadScene("LoseMenu");
             Debug.Log("You Lose!");
         }
-        else if (remainingTime <= 0 && currentProgress_script.currentProgress > 90)
+        //remainingTime <= 0 && currentProgress_script.currentProgress > 90
+        else if (remainingTime <= 0 && progressBar.value > 90)
         {
             remainingTime = 0;
             SceneManager.LoadScene("WinMenu");
             Debug.Log("You Win!");
         }
-
-        if (remainingTime > 0 && currentProgress_script.currentProgress > 90)
+        //remainingTime > 0 && currentProgress_script.currentProgress 
+        if (remainingTime > 0 && progressBar.value == 100)
         {
             //remainingTime = 0;
             SceneManager.LoadScene("WinMenu");
