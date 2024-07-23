@@ -29,9 +29,14 @@ public class SiblingPickUp : MonoBehaviour
                 //placed in from of player
                 itemHolding.transform.position = holdSpot.transform.position + Direction;
                 itemHolding.transform.parent =null;
+                if(itemHolding.GetComponent<DistractionInt>())
+                {
+                    itemHolding.GetComponent<DistractionInt>().enabled=true;
+                }
                 if(itemHolding.GetComponent<Rigidbody2D>())
                 {
                     itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                    
                     itemHolding =  null;
                 }
             }
@@ -49,11 +54,19 @@ public class SiblingPickUp : MonoBehaviour
 
                     if(itemHolding.GetComponent<Rigidbody2D>())
                     {
+                        
                         itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                        
                     }
+                    if(itemHolding.GetComponent<DistractionInt>())
+                    {
+                        itemHolding.GetComponent<DistractionInt>().enabled=false;
+                    }
+                    
                 }
             }
             
         }
     }
+
 }
