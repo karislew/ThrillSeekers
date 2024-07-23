@@ -8,6 +8,7 @@ TagManager:
   - Table
   - Box
   - Sibling
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - SolidObjects
   - PickUp
-  - 
+  - Ground
   - 
   - 
   - 
@@ -56,6 +57,12 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2849154337
+    locked: 0
+  - name: Enemy
+    uniqueID: 2307421927
+    locked: 0
+  - name: SolidObjects
+    uniqueID: 2604398915
     locked: 0
   - name: Foreground
     uniqueID: 2000027357
