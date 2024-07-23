@@ -6,7 +6,8 @@ public class SiblingPickUp : MonoBehaviour
 {
     public Transform holdSpot;
     public LayerMask pickUpMask;
-
+    public AudioClip audiopickup;
+    
     //using getters and setters
     public Vector3 Direction{ get;set; }
 
@@ -51,6 +52,8 @@ public class SiblingPickUp : MonoBehaviour
                     itemHolding.transform.position = holdSpot.position;
                     //set parent of that item to player so it will move along with it 
                     itemHolding.transform.parent = transform;
+
+                    AudioSource.PlayClipAtPoint(audiopickup, transform.position, 0.5f);
 
                     if(itemHolding.GetComponent<Rigidbody2D>())
                     {
