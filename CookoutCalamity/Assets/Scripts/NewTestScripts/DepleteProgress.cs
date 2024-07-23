@@ -8,13 +8,16 @@ public class DepleteProgress : MonoBehaviour
 
     public Slider progressBar;
     //public GameObject enemyPrefab;
-    public float decProgress = 3;
+    //public float decProgress = 3;
+
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Enemy")
         {
-            StartCoroutine(Wait(col.gameObject,decProgress));
+            TestMovement enemy = col.gameObject.GetComponent<TestMovement>();
+            Debug.Log("Deplete value" + enemy.deplete + col.gameObject.name);
+            StartCoroutine(Wait(col.gameObject,enemy.deplete));
             
         }
     }
