@@ -8,12 +8,15 @@ public class WayPointManagement : MonoBehaviour
     public Transform[] waypoints;
     public Transform[] waypoints2;
 
+    public Transform[] waypoints3;
+
     public List<Transform[]> paths = new List<Transform[]>();
 
     void Awake()
     {
         paths.Add(waypoints);
         paths.Add(waypoints2);
+        paths.Add(waypoints3);
     }
     
     public Transform[] GetRandomPath()
