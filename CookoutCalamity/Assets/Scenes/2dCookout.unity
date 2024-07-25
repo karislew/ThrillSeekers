@@ -8182,6 +8182,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2760524553696639191, guid: e77bc471da979aa42902dda8c5154167, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: acaa8db32bbc7954eab9876721a2be9f, type: 2}
+    - target: {fileID: 2760524553696639191, guid: e77bc471da979aa42902dda8c5154167, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1087739583671331133, guid: acaa8db32bbc7954eab9876721a2be9f, type: 2}
+    - target: {fileID: 2760524553696639191, guid: e77bc471da979aa42902dda8c5154167, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3151077480799577272, guid: e77bc471da979aa42902dda8c5154167, type: 3}
       propertyPath: m_Pivot.x
       value: 0
