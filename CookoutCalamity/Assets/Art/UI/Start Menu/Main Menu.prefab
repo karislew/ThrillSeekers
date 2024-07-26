@@ -228,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -541,9 +541,9 @@ RectTransform:
   m_Father: {fileID: 6978459807531153255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 958.8, y: 542.13}
-  m_SizeDelta: {x: 1917.6, y: 1084.3}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.1999512, y: 2.130005}
+  m_SizeDelta: {x: -2.3999023, y: 4.300049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7831834806684622941
 CanvasRenderer:
@@ -880,6 +880,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PauseMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5538409043134318343, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5812669661474918108, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_Name
       value: Quit Button
@@ -1000,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1008,7 +1012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1016,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55.2925
+      value: 55.292496
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1048,11 +1052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -228.18
+      value: 27.646248
       objectReference: {fileID: 0}
     - target: {fileID: 1713535036970767426, guid: 943d3bfe7be2d9b4a9aa21acc7a9dd5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1256,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2742784595926665357, guid: 19ff8806429e65b48989bdfeff3d8f00, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2913147351051455468, guid: 19ff8806429e65b48989bdfeff3d8f00, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1340,7 +1344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706521110104705896, guid: 19ff8806429e65b48989bdfeff3d8f00, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.0872
+      value: 101.08719
       objectReference: {fileID: 0}
     - target: {fileID: 4706521110104705896, guid: 19ff8806429e65b48989bdfeff3d8f00, type: 3}
       propertyPath: m_LocalPosition.x
