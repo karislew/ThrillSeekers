@@ -9,6 +9,7 @@ public class DistractionInt : MonoBehaviour
     public Transform siblingSpot;
     public Transform siblingPosition;
     private GameObject nearestEnemy=null;
+    public PositionsManager positionsManager;
     
 
     public float range = 5f;
@@ -66,9 +67,37 @@ public class DistractionInt : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         target=null;
         transform.position=siblingPosition.position;
+        //Transform sibPos = positionsManager.GetPosition();
+        //transform.position = sibPos.position;
     }
     
+
+
+/*
+    void EnablePickUp()
+    {
+    rangeSpriteRenderer = itemHolding.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            if (rangeSpriteRenderer != null)
+            {
+                rangeSpriteRenderer.enabled = true;
+            }
+
+            AudioSource.PlayClipAtPoint(audiopickup, transform.position, 0.5f);
+
+            if (itemHolding.GetComponent<Rigidbody2D>())
+            {
+                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+            }
+
+            if (itemHolding.GetComponent<DistractionInt>())
+            {
+                itemHolding.GetComponent<DistractionInt>().enabled = false;
+            }
+    }
+*/
 }
+
+
 
 
 /*
