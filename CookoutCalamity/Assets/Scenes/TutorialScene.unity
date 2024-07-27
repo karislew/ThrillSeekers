@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -193.81, y: 76}
-  m_SizeDelta: {x: -1788.8, y: -975.958}
+  m_AnchoredPosition: {x: -776, y: -179}
+  m_SizeDelta: {x: -1747.0065, y: -937.5079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20432667
 MonoBehaviour:
@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 405.64, y: 0}
-  m_SizeDelta: {x: 249.4, y: 50.1241}
+  m_AnchoredPosition: {x: 460, y: 9}
+  m_SizeDelta: {x: 525.6313, y: 72.448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55009843
 MonoBehaviour:
@@ -256,8 +256,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your goal is to prepare the table before the time ends. Prepare the table
-    by holding SPACE near it.
+  m_text: 1) Your goal is to prepare the table before the time ends. Prepare the
+    table by holding SPACE near it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -284,13 +284,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 2
+  m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -28.604218, z: 0, w: 0}
+  m_margin: {x: 0, y: -28.604218, z: -0.0008544922, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -408,11 +408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -154
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -404
+      value: -275
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -550,8 +550,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 421.16138, y: -14.302063}
-  m_SizeDelta: {x: 249.4072, y: 78.6042}
+  m_AnchoredPosition: {x: 430.8105, y: -16.9031}
+  m_SizeDelta: {x: 425.8563, y: 128.0403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594086427
 MonoBehaviour:
@@ -573,8 +573,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balance your family and cookout prep to complete the cookout and win the
-    game!
+  m_text: 5) Balance your family and cookout prep to complete the cookout and win
+    the game!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -601,13 +601,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -686,8 +686,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -203.83, y: -60.91}
-  m_SizeDelta: {x: -1799.8, y: -985.3574}
+  m_AnchoredPosition: {x: 126, y: 227}
+  m_SizeDelta: {x: -1739.6173, y: -930.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678628697
 MonoBehaviour:
@@ -761,8 +761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449, y: -0.000015258789}
-  m_SizeDelta: {x: 249.4, y: 50.1241}
+  m_AnchoredPosition: {x: 448, y: -12}
+  m_SizeDelta: {x: 430.252, y: 80.5506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722114778
 MonoBehaviour:
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stay alert, your family wishes to mess with your preparations
+  m_text: 2) Stay alert, your family wishes to mess with your preparations
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -811,13 +811,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -895,8 +895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 442.52002, y: 0}
-  m_SizeDelta: {x: 249.4, y: 50.1241}
+  m_AnchoredPosition: {x: 442, y: 0.000015259}
+  m_SizeDelta: {x: 414.9021, y: 92.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726165786
 MonoBehaviour:
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Shield the table through the power of your siblings, they\u2019ll distract
+  m_text: "3) Shield the table through the power of your siblings, they\u2019ll distract
     your family members!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -946,13 +946,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1031,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167.18, y: -215}
-  m_SizeDelta: {x: -1726.4946, y: -995.3146}
+  m_AnchoredPosition: {x: 181.24, y: -71}
+  m_SizeDelta: {x: -1629.1316, y: -945.2012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258403783
 MonoBehaviour:
@@ -1199,8 +1199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -156.91, y: 367}
-  m_SizeDelta: {x: -1705.9525, y: -947.3227}
+  m_AnchoredPosition: {x: -743.1399, y: 249}
+  m_SizeDelta: {x: -1666.3828, y: -910.9948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344345641
 MonoBehaviour:
@@ -1365,11 +1365,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1683907869}
-  - {fileID: 1258403782}
-  - {fileID: 678628696}
-  - {fileID: 20432666}
-  - {fileID: 1895569532}
   - {fileID: 1344345640}
+  - {fileID: 1895569532}
+  - {fileID: 20432666}
+  - {fileID: 678628696}
+  - {fileID: 1258403782}
   m_Father: {fileID: 1888515095}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1449,8 +1449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 39.298218, y: -0.0025024414}
-  m_SizeDelta: {x: -1227.2295, y: -0.0050049}
+  m_AnchoredPosition: {x: -5.8983765, y: 9.695374}
+  m_SizeDelta: {x: -68.1791, y: -354.6281}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683907870
 MonoBehaviour:
@@ -1524,8 +1524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 452.54996, y: -0.00002670288}
-  m_SizeDelta: {x: 249.41, y: 26.8217}
+  m_AnchoredPosition: {x: 479, y: -9}
+  m_SizeDelta: {x: 415.6925, y: 86.6614}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689531745
 MonoBehaviour:
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pick up and move your siblings around by pressing E near them.
+  m_text: 4) Pick up and move your siblings around by pressing E near them.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1574,13 +1574,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1763,8 +1763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -198.33, y: 214}
-  m_SizeDelta: {x: -1797.8351, y: -983.1412}
+  m_AnchoredPosition: {x: -776, y: 38.994995}
+  m_SizeDelta: {x: -1732.1, y: -935.5881}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895569533
 MonoBehaviour:
@@ -1898,11 +1898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 209
+      value: 581
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 136
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
