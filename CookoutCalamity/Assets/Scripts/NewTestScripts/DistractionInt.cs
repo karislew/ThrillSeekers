@@ -10,11 +10,16 @@ public class DistractionInt : MonoBehaviour
     public Transform siblingPosition;
     private GameObject nearestEnemy=null;
     public PositionsManager positionsManager;
+    public GameObject speechUI;
     
 
     public float range = 5f;
     public string enemyTag="Enemy";
 
+    void Start()
+    {
+        speechUI.SetActive(false);
+    }
     /*
      void Update()
     {
@@ -29,11 +34,12 @@ public class DistractionInt : MonoBehaviour
 
         if (col.gameObject.tag == enemyTag)
         {
-            Debug.Log("TargetTT");
+            //Debug.Log("TargetTT");
          
             if(target==null){
                 nearestEnemy=col.gameObject;
                 target=nearestEnemy.transform;
+                speechUI.SetActive(true);
                 nearestEnemy.GetComponent<TestMovement>().enabled=false;
                 //to fix the glitching
                 if(target.transform.position!=siblingSpot.transform.position)
@@ -64,6 +70,7 @@ public class DistractionInt : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         Destroy(nearestEnemy);
+        speechUI.SetActive(false);
         yield return new WaitForSeconds(.1f);
         target=null;
         transform.position=siblingPosition.position;
