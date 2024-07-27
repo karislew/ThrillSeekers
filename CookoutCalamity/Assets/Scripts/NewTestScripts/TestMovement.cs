@@ -13,6 +13,7 @@ public class TestMovement : MonoBehaviour
     [SerializeField]
     public static TestMovement instance;
     public float speed=4;
+    public float deplete = 10f;
 
     //index of current waypoint
     private int waypointIndex = 0;

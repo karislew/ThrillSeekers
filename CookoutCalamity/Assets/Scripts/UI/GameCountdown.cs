@@ -50,7 +50,7 @@ public class GameCountdown : MonoBehaviour
             Debug.Log("You Lose!");
         }
         //remainingTime <= 0 && currentProgress_script.currentProgress > 90
-        else if (remainingTime <= 0 && progressBar.value > 90)
+        else if (remainingTime <= 0 && progressBar.value > 98)
         {
             remainingTime = 0;
             SceneManager.LoadScene("WinMenu");

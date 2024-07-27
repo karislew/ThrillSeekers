@@ -14,6 +14,7 @@ public class WayPointManagement : MonoBehaviour
     {
         paths.Add(waypoints);
         paths.Add(waypoints2);
+ 
     }
     
     public Transform[] GetRandomPath()

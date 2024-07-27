@@ -49,11 +49,17 @@ TagManager:
   - name: Background
     uniqueID: 2255536773
     locked: 0
+  - name: RangeCircle
+    uniqueID: 3388838389
+    locked: 0
   - name: Table
     uniqueID: 2329291209
     locked: 0
   - name: Player
     uniqueID: 4287387981
+    locked: 0
+  - name: SpeechUI
+    uniqueID: 388797823
     locked: 0
   - name: Sibling
     uniqueID: 1073889753
