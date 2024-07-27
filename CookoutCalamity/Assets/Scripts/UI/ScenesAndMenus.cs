@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -49,28 +54,29 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Debug.Log("Loading main menu. . .");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        LevelManager.Instance.LoadScene("MainMenu", "CircleWipe");
         //SceneManager.LoadScene("Karis");
+        Time.timeScale = 1f;
     }
 
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("2DCookout");
+        LevelManager.Instance.LoadScene("2DCookout", "CircleWipe");
         Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void LoadWinMenu()
     {
-        Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("WinMenu");
+        Debug.Log("Loading win scene. . .");
+        LevelManager.Instance.LoadScene("WinMenu", "CrossFade");
     }
 
     public void LoadLoseMenu()
     {
-        Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("LoseMenu");
+        Debug.Log("Loading lose scene. . .");
+        LevelManager.Instance.LoadScene("LoseMenu", "CrossFade");
     }
 
 
