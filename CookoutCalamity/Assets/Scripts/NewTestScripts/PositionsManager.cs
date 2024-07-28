@@ -5,10 +5,11 @@ using UnityEngine;
 public class PositionsManager : MonoBehaviour
 {
     public Transform siblingPosition1;
-
+  
     public Transform GetPosition()
     {
         return siblingPosition1;
+
     }
-    
+
 }
