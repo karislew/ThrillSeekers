@@ -14,6 +14,8 @@ public class GameCountdown : MonoBehaviour
     private PTableInteract currentProgress_script;
     public float delay = 0.5f;
     private float timer;
+    public bool hasPlayed = false;
+    public AudioClip countdown;
 
     void Start()
     {
@@ -36,12 +38,21 @@ public class GameCountdown : MonoBehaviour
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
-
+        
         if (remainingTime > 0)
         {
-            remainingTime -= Time.deltaTime;
+                if (remainingTime <= 21 && hasPlayed == false)
+                    {
+                    AudioSource scriptedCountdown;
+                    Debug.Log("Start countdown");
+                    scriptedCountdown = GetComponent<AudioSource>();
+                    scriptedCountdown.Play();
+                    hasPlayed = true;
+                    }
+            remainingTime -= Time.deltaTime;       
         }
         //remainingTime <= 0 && currentProgress_script.currentProgress < 90
+
         else if (remainingTime <= 0 && progressBar.value < 90)
         {
             Debug.Log("IN THIS " + remainingTime);
