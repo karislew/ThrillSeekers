@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject optionsMenuUI;
+    public GameObject tutorialMenuUI;
 
     private void Start()
     {
@@ -40,6 +42,8 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Resuming game. . .");
         pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -62,7 +66,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        LevelManager.Instance.LoadScene("2DCookout", "CircleWipe");
+        LevelManager.Instance.LoadScene("2DCookout", "CrossFade");
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -79,6 +83,12 @@ public class PauseMenu : MonoBehaviour
         LevelManager.Instance.LoadScene("LoseMenu", "CrossFade");
     }
 
+    public void LoadTutorialScene()
+    {
+        Debug.Log("Loading tutorial scene. . .");
+        LevelManager.Instance.LoadScene("TutorialScene", "CircleWipe");
+        Time.timeScale = 1f;
+    }
 
 
 }

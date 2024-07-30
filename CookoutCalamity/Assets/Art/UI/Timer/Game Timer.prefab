@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2760524553696639191}
-  remainingTime: 35
+  remainingTime: 45
   progressBar: {fileID: 0}
   player: {fileID: 0}
   delay: 0.5
