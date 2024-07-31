@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -83700,12 +83700,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b254f0efb41941d58bb5bb109919fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state1: {fileID: 1471762273}
-  state2: {fileID: 807059426}
-  state3: {fileID: 344511152}
-  state4: {fileID: 494427101}
-  state5: {fileID: 1314202162}
-  state6: {fileID: 312285112}
+  tableStates:
+  - {fileID: 1471762273}
+  - {fileID: 807059426}
+  - {fileID: 344511152}
+  - {fileID: 494427101}
+  - {fileID: 1314202162}
+  - {fileID: 312285112}
   progressBar: {fileID: 1425934619}
 --- !u!114 &1258583574
 MonoBehaviour:

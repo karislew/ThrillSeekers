@@ -43,9 +43,9 @@ public class GameCountdown : MonoBehaviour
         {
             if (remainingTime <= 21 && hasPlayed == false)
             {
-                AudioSource scriptedCountdown;
+
                 Debug.Log("Start countdown");
-                scriptedCountdown = GetComponent<AudioSource>();
+                AudioSource scriptedCountdown = GetComponent<AudioSource>();
                 scriptedCountdown.Play();
                 hasPlayed = true;
             }
