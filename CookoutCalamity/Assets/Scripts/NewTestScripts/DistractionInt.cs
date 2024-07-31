@@ -11,7 +11,7 @@ public class DistractionInt : MonoBehaviour
     private GameObject nearestEnemy=null;
     public PositionsManager positionsManager;
     public GameObject speechUI;
-    
+    public AudioClip arguing;
 
     public float range = 5f;
     public string enemyTag="Enemy";
@@ -49,6 +49,8 @@ public class DistractionInt : MonoBehaviour
 
                 }
                 StartCoroutine(Wait(nearestEnemy,siblingPosition));
+
+                AudioSource.PlayClipAtPoint(arguing, transform.position, 0.5f);
             }
             
 
