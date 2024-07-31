@@ -8,6 +8,13 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject optionsMenuUI;
+    public GameObject tutorialMenuUI;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
@@ -35,6 +42,8 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Resuming game. . .");
         pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -49,30 +58,37 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Debug.Log("Loading main menu. . .");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        LevelManager.Instance.LoadScene("MainMenu", "CircleWipe");
         //SceneManager.LoadScene("Karis");
+        Time.timeScale = 1f;
     }
 
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("2DCookout");
+        LevelManager.Instance.LoadScene("2DCookout", "CrossFade");
         Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void LoadWinMenu()
     {
-        Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("WinMenu");
+        Debug.Log("Loading win scene. . .");
+        LevelManager.Instance.LoadScene("WinMenu", "CrossFade");
     }
 
     public void LoadLoseMenu()
     {
-        Debug.Log("Loading game scene. . .");
-        SceneManager.LoadScene("LoseMenu");
+        Debug.Log("Loading lose scene. . .");
+        LevelManager.Instance.LoadScene("LoseMenu", "CrossFade");
     }
 
+    public void LoadTutorialScene()
+    {
+        Debug.Log("Loading tutorial scene. . .");
+        LevelManager.Instance.LoadScene("TutorialScene", "CircleWipe");
+        Time.timeScale = 1f;
+    }
 
 
 }
