@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     //getting rigid body which will help move player 
     public Rigidbody2D rb;
+    private Animator animator;
+    private bool isMoving;
 
     //storing the (x,y) input 
     Vector2 movement;
@@ -19,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private SiblingPickUp pickUp;
 
     // Update is called once per frame
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Start ()
     {
         //find pickup component
@@ -29,10 +35,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //input 
+
         //storing horizontal movement (-1,1)->left,right 
         movement.x = Input.GetAxisRaw("Horizontal");
         //storing the vertical movement (-1,1)-> down,up
         movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if(movement!=Vector2.zero)
+        {
+            animator.SetFloat("Horizontal",movement.x);
+            animator.SetFloat("Vertical",movement.y);
+
+        }
+            
+            
+            
+        
+        
+        //animator.SetFloat("Speed",movement.sqrMagnitude);
         //check we dont store zero as our direction
         if(movement.sqrMagnitude > .1f)
         {
