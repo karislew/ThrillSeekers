@@ -13,7 +13,7 @@ public class EnemySpawn : MonoBehaviour
 
 
     //time between spawns 
-    private float timeBetweenSpawns=8f;
+    private float timeBetweenSpawns=10f;
     public WayPointManagement waypointManager;
 
     //time to spawn first 
