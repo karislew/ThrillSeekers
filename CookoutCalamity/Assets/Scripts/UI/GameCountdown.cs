@@ -35,10 +35,6 @@ public class GameCountdown : MonoBehaviour
     }
     public void CountDownClock()
     {
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
-
         if (remainingTime > 0)
         {
             if (remainingTime <= 21 && hasPlayed == false)
@@ -74,5 +70,9 @@ public class GameCountdown : MonoBehaviour
             SceneManager.LoadScene("WinMenu");
             Debug.Log("You Win!");
         }
+        // This has to be below all the if statements for the timer to stop counting at 0, and not go negative for 1 half of a second.
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
     }
 }
