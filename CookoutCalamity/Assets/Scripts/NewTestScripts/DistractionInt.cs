@@ -60,7 +60,7 @@ public class DistractionInt : MonoBehaviour
 
                 //StartCoroutine(Wait(nearestEnemy, siblingPosition));
 
-                AudioSource.PlayClipAtPoint(arguing, transform.position, 0.5f);
+                AudioSource.PlayClipAtPoint(arguing, transform.position, 2f);
             }
         }
     }
