@@ -66,7 +66,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        LevelManager.Instance.LoadScene("2DCookout", "CrossFade");
+        LevelManager.Instance.LoadScene("2DCookout", "CircleWipe");
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -74,13 +74,13 @@ public class PauseMenu : MonoBehaviour
     public void LoadWinMenu()
     {
         Debug.Log("Loading win scene. . .");
-        LevelManager.Instance.LoadScene("WinMenu", "CrossFade");
+        LevelManager.Instance.LoadScene("WinMenu", "CircleWipe");
     }
 
     public void LoadLoseMenu()
     {
         Debug.Log("Loading lose scene. . .");
-        LevelManager.Instance.LoadScene("LoseMenu", "CrossFade");
+        LevelManager.Instance.LoadScene("LoseMenu", "CircleWipe");
     }
 
     public void LoadTutorialScene()
