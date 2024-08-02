@@ -9,7 +9,6 @@ TagManager:
   - Box
   - Sibling
   - Ground
-  - Audio
   layers:
   - Default
   - TransparentFX
