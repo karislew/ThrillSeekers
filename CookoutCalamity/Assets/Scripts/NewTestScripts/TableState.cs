@@ -5,88 +5,35 @@ using UnityEngine.UI;
 
 public class TableProgress : MonoBehaviour
 {
-    public GameObject state1;
-    public GameObject state2;
-    public GameObject state3;
-    public GameObject state4;
-    public GameObject state5;
-    public GameObject state6;
-    public Slider progressBar;
-    // Start is called before the first frame update
+    public GameObject[] tableStates; // Array to hold the different table states
+    public Slider progressBar;       // Reference to the progress bar UI element
+
     void Start()
     {
-        state1.SetActive(true);
-        state2.SetActive(false);
-        state3.SetActive(false);
-        state4.SetActive(false);
-        state5.SetActive(false);
-        state6.SetActive(false);
-
-
+        SetTableState(0); // Start with the first state active
     }
+
     void Update()
     {
-        if (progressBar.value == 15)
-        {
-            state1.SetActive(false);
-            state2.SetActive(true);
-            state3.SetActive(false);
-            state4.SetActive(false);
-            state5.SetActive(false);
-            state6.SetActive(false);
+        // Define the progress thresholds for each state
+        float[] thresholds = { 0, 20, 35, 55, 75, 90};
 
-   
-        }
-        else if (progressBar.value == 30)
+        // Determine which state should be active based on the progress bar value
+        for (int i = thresholds.Length - 1; i >= 0; i--)
         {
-            state1.SetActive(false);
-            state2.SetActive(false);
-            state3.SetActive(true);
-            state4.SetActive(false);
-            state5.SetActive(false);
-            state6.SetActive(false);
-
+            if (progressBar.value >= thresholds[i])
+            {
+                SetTableState(i);
+                break;
+            }
         }
-        else if (progressBar.value == 45)
+    }
+
+    void SetTableState(int activeState)
+    {
+        for (int i = 0; i < tableStates.Length; i++)
         {
-            state1.SetActive(false);
-            state2.SetActive(false);
-            state3.SetActive(false);
-            state4.SetActive(true);
-            state5.SetActive(false);
-            state6.SetActive(false);
-
+            tableStates[i].SetActive(i == activeState);
         }
-        else if (progressBar.value == 60)
-        {
-            state1.SetActive(false);
-            state2.SetActive(false);
-            state3.SetActive(false);
-            state4.SetActive(false);
-            state5.SetActive(true);
-            state6.SetActive(false);
-
-        }
-        else if (progressBar.value == 75)
-        {
-            state1.SetActive(false);
-            state2.SetActive(false);
-            state3.SetActive(false);
-            state4.SetActive(false);
-            state5.SetActive(true);
-            state6.SetActive(false);
-
-        }
-        else if (progressBar.value == 90)
-        {
-            state1.SetActive(false);
-            state2.SetActive(false);
-            state3.SetActive(false);
-            state4.SetActive(false);
-            state5.SetActive(false);
-            state6.SetActive(true);
-
-        }
-        
     }
 }
