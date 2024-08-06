@@ -14,6 +14,8 @@ public class GameCountdown : MonoBehaviour
     private PTableInteract currentProgress_script;
     public float delay = 0.5f;
     private float timer;
+    public bool hasPlayed = false;
+    public AudioClip countdown;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class GameCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         timer += Time.deltaTime;
         if (timer > delay)
         {
@@ -39,9 +41,18 @@ public class GameCountdown : MonoBehaviour
 
         if (remainingTime > 0)
         {
+            if (remainingTime <= 21 && hasPlayed == false)
+            {
+
+                Debug.Log("Start countdown");
+                AudioSource scriptedCountdown = GetComponent<AudioSource>();
+                scriptedCountdown.Play();
+                hasPlayed = true;
+            }
             remainingTime -= Time.deltaTime;
         }
         //remainingTime <= 0 && currentProgress_script.currentProgress < 90
+
         else if (remainingTime <= 0 && progressBar.value < 90)
         {
             Debug.Log("IN THIS " + remainingTime);
@@ -50,7 +61,7 @@ public class GameCountdown : MonoBehaviour
             Debug.Log("You Lose!");
         }
         //remainingTime <= 0 && currentProgress_script.currentProgress > 90
-        else if (remainingTime <= 0 && progressBar.value > 90)
+        else if (remainingTime <= 0 && progressBar.value > 98)
         {
             remainingTime = 0;
             SceneManager.LoadScene("WinMenu");
