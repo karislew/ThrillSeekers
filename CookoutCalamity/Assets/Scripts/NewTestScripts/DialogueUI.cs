@@ -6,6 +6,8 @@ public class DialogueUI : MonoBehaviour
 {
 
     public GameObject popUp;
+    public GameObject triggerBox;
+    public GameObject gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,15 @@ public class DialogueUI : MonoBehaviour
         if (collision.gameObject.tag == "Tutorial")
         {
             popUp.SetActive(true);
+        }
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Tutorial")
+        {
+            popUp.SetActive(false);
+            triggerBox.SetActive(false);
+            gameManager.SetActive(true);
         }
     }
 }
