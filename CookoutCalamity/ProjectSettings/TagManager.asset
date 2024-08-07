@@ -9,7 +9,6 @@ TagManager:
   - Box
   - Sibling
   - Ground
-  - Tutorial
   layers:
   - Default
   - TransparentFX
