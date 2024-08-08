@@ -130,7 +130,7 @@ using UnityEngine.UI;
 public class PTableInteract : MonoBehaviour
 {
     public int minProgress = 0;
-    public int maxProgress = 100;
+    public int maxProgress;
     public float currentProgress;
     public Slider progressBar;
     private bool inTrig = false;
@@ -190,7 +190,8 @@ public class PTableInteract : MonoBehaviour
     {
         while (currentProgress < maxProgress)
         {
-            currentProgress+=maxProgress/100;
+            
+            currentProgress+=.33f;
             progressBar.value = currentProgress;
            // Debug.Log("Current Progress: " + currentProgress);
             yield return progressTick;
