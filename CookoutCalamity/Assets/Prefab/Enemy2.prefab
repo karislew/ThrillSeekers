@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5191897653628732060}
   - component: {fileID: 4021121510550874509}
   m_Layer: 0
-  m_Name: TutorialEnemy
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45b87aa83adf41538de5f82cff7ef20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 12
   deplete: 35
 --- !u!70 &5191897653628732060
 CapsuleCollider2D:
@@ -133,8 +133,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.042739872, y: -0.0089687845}
-  m_Size: {x: 3.171486, y: 7.5930204}
+  m_Offset: {x: 0.0070145936, y: -0.065441236}
+  m_Size: {x: 3.1723967, y: 7.3781605}
   m_Direction: 0
 --- !u!50 &4021121510550874509
 Rigidbody2D:
