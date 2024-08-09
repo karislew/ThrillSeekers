@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,14 +17,34 @@ public class PlayerMovement : MonoBehaviour
 
     //storing the (x,y) input 
     Vector2 movement;
+    private InputAction move;
+    private InputAction fire;
+    //name of script
+    public PlayerInputActions playerControls;
 
     //reference to pickup script
     private SiblingPickUp pickUp;
 
     // Update is called once per frame
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        playerControls= new PlayerInputActions();
+    }
+    private void OnEnable()
+    {
+        
+        move=playerControls.Player.Move;
+        move.Enable();
+      
+    }
+    private void OnDisable()
+    {
+    
+        //requirement of new input system
+        move.Disable();
     }
     void Start ()
     {
@@ -37,9 +58,11 @@ public class PlayerMovement : MonoBehaviour
         //input 
 
         //storing horizontal movement (-1,1)->left,right 
-        movement.x = Input.GetAxisRaw("Horizontal");
+        //movement.x = Input.GetAxisRaw("Horizontal");
         //storing the vertical movement (-1,1)-> down,up
-        movement.y = Input.GetAxisRaw("Vertical");
+        //movement.y = Input.GetAxisRaw("Vertical");
+        movement = move.ReadValue<Vector2>();
+        
         animator.SetFloat("Speed", movement.sqrMagnitude);
         if(movement!=Vector2.zero)
         {
@@ -71,4 +94,6 @@ public class PlayerMovement : MonoBehaviour
         //multiple by time to get a constant movement speed
         rb.MovePosition(rb.position + movement * moveSpeed *  Time.fixedDeltaTime);
     }
+
+    
 }
