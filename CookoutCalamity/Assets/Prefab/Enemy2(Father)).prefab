@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5191897653628732060}
   - component: {fileID: 4021121510550874509}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2(Father))
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,8 +133,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0070145936, y: -0.065441236}
-  m_Size: {x: 3.1723967, y: 7.3781605}
+  m_Offset: {x: 0.030480253, y: -0.041102048}
+  m_Size: {x: 3.1956987, y: 7.4430346}
   m_Direction: 0
 --- !u!50 &4021121510550874509
 Rigidbody2D:

@@ -130,15 +130,17 @@ using UnityEngine.UI;
 public class PTableInteract : MonoBehaviour
 {
     public int minProgress = 0;
-    public int maxProgress = 100;
+    public int maxProgress;
     public float currentProgress;
     public Slider progressBar;
     private bool inTrig = false;
     private Coroutine regenCoroutine;
+    public GameObject poof;
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
 
     void Start()
     {
+        poof.SetActive(false);
         currentProgress = minProgress;
         progressBar.maxValue = maxProgress;
         progressBar.value = currentProgress;
@@ -150,6 +152,7 @@ public class PTableInteract : MonoBehaviour
         currentProgress = progressBar.value;
         if (inTrig && Input.GetKey(KeyCode.Space))
         {
+            //poof.SetActive(true);
             if (regenCoroutine == null)
             {
                 regenCoroutine = StartCoroutine(IncreaseProgress());
@@ -157,6 +160,7 @@ public class PTableInteract : MonoBehaviour
         }
         else if (!inTrig || !Input.GetKey(KeyCode.Space))
         {
+            //poof.SetActive(false);
             if (regenCoroutine != null)
             {
                 StopCoroutine(regenCoroutine);
@@ -190,7 +194,8 @@ public class PTableInteract : MonoBehaviour
     {
         while (currentProgress < maxProgress)
         {
-            currentProgress+=maxProgress/100;
+            
+            currentProgress+=.4f;
             progressBar.value = currentProgress;
            // Debug.Log("Current Progress: " + currentProgress);
             yield return progressTick;
