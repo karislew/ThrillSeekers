@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2935397728638182386}
   - component: {fileID: 5191897653628732060}
   - component: {fileID: 4021121510550874509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45b87aa83adf41538de5f82cff7ef20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  deplete: 35
+  speed: 15
+  deplete: 21
 --- !u!70 &5191897653628732060
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ Rigidbody2D:
     m_Bits: 1280
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

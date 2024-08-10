@@ -9,6 +9,7 @@ public class PTableInteract : MonoBehaviour
     public int maxProgress;
     public float currentProgress;
     public Slider progressBar;
+    public float fillTableValue = .4f;
     private bool inTrig = false;
     private Coroutine regenCoroutine;
     public GameObject poof;
@@ -93,7 +94,7 @@ public class PTableInteract : MonoBehaviour
         while (currentProgress < maxProgress)
         {
             
-            currentProgress+=.4f;
+            currentProgress+=fillTableValue;
             progressBar.value = currentProgress;
            // Debug.Log("Current Progress: " + currentProgress);
             yield return progressTick;
