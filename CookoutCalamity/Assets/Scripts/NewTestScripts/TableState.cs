@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class TableProgress : MonoBehaviour
 {
@@ -10,6 +11,24 @@ public class TableProgress : MonoBehaviour
     public Slider progressBar;       // Reference to the progress bar UI element
     private bool tableState;
     private bool inTrig = false;
+
+    //Inputs for Keyboard and Controller
+    PlayerInputActions playerControls;
+    private InputAction space;
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
+    private void OnEnable()
+    {
+        space = playerControls.Player.SpaceKey;
+        space.Enable();
+    }
+    private void OnDisable()
+    {
+        space.Disable();
+    }
+
 
     void Start()
     {
@@ -20,7 +39,8 @@ public class TableProgress : MonoBehaviour
 
     void Update()
     {
-        
+        bool isSpaceHeld = space.ReadValue<float>() > 0.1f;
+
         // Define the progress thresholds for each state
         float[] thresholds = { 0, 20, 35, 55, 75, 90};
 
@@ -38,12 +58,12 @@ public class TableProgress : MonoBehaviour
                 break;
             }
         }
-        if(inTrig && Input.GetKey(KeyCode.Space)&& tableState==false)
+        if(inTrig && isSpaceHeld && tableState==false)
         {
             poof.SetActive(true);
         }
 
-        else if (!inTrig || !Input.GetKeyDown(KeyCode.Space) || tableState==true)
+        else if (!inTrig || !isSpaceHeld || tableState==true)
         {
             poof.SetActive(false);
         }

@@ -35,7 +35,7 @@ public class PTableInteract : MonoBehaviour
 
     void Start()
     {
-        poof.SetActive(false);
+        //poof.SetActive(false);
         currentProgress = minProgress;
         progressBar.maxValue = maxProgress;
         progressBar.value = currentProgress;

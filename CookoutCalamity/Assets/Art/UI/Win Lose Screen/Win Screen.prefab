@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6870e27dbe10b84b83f34c8acdc3a55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28eeb76422f31d34694598b12c93c352, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,6 +193,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
+  optionsMenuUI: {fileID: 0}
+  tutorialMenuUI: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
+  optionsFirstButton: {fileID: 0}
+  optionsCloseButton: {fileID: 0}
 --- !u!1 &5562322096678524224
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 276.5316
+      value: 502.774
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.08719
+      value: 142.29
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50.543594
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 3785158498803901289, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -406,23 +411,15 @@ PrefabInstance:
     - target: {fileID: 4729736778002272124, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0cf3768ea9011a3429c794fc09c1c271, type: 3}
+      objectReference: {fileID: 21300000, guid: 089a15380216ea54e9300c7d68abc455, type: 3}
     - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: ae71c73325bf69a4998a70b190c6922b, type: 3}
+      objectReference: {fileID: 21300000, guid: 6a40d6bda63b57e49953ac57f1c6a116, type: 3}
     - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2312554776135521162}
-    - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -441,26 +438,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8176535982173689504}
     m_Modifications:
-    - target: {fileID: 4132641867025179048, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7380117ddd412284a92a288554b56eb5, type: 3}
-    - target: {fileID: 5480807531009701584, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
-      propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7cd1827498d924c46ad5ad182660423b, type: 3}
     - target: {fileID: 5480807531009701584, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2312554776135521162}
-    - target: {fileID: 5480807531009701584, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5480807531009701584, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5812669661474918108, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_Name
       value: Main Menu Button
@@ -491,11 +472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 276.5316
+      value: 502.774
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.08719
+      value: 142.29
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -527,11 +508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 261.45
+      value: 353
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50.543594
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 6568175169271107682, guid: f49daac479d245a499bb3bf47219bc41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
