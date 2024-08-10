@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4991837589077982870}
   - component: {fileID: 5312151416449438587}
   - component: {fileID: 844273047500632563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy3(Uncle)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Rigidbody2D:
     m_Bits: 1280
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  deplete: 10
+  deplete: 15

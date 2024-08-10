@@ -13,11 +13,11 @@ public class EnemySpawn : MonoBehaviour
 
 
     //time between spawns 
-    public float timeBetweenSpawns=10f;
+    public float timeBetweenSpawns=5f;
     public WayPointManagement waypointManager;
 
     //time to spawn first 
-    private float countdown=2f;
+    private float countdown=3f;
 
     private int waveIndex = 0;
 
@@ -40,7 +40,7 @@ public class EnemySpawn : MonoBehaviour
     //can wait x seconds before continuing 
     IEnumerator SpawnEnemy()
     {
-        waveIndex=1;
+        waveIndex=Random.Range(1,1);
         
         //++ to get more enemies 
         for (int i=0;i<waveIndex;i++)

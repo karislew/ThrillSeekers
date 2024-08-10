@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -846,6 +846,7 @@ MonoBehaviour:
   maxProgress: 100
   currentProgress: 0
   progressBar: {fileID: 1425934619}
+  fillTableValue: 0.4
   poof: {fileID: 988456607}
 --- !u!114 &96849237
 MonoBehaviour:
@@ -859,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2db4d7a99f641e68f5bf37e47b4349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
+  moveSpeed: 28
   rb: {fileID: 96849238}
 --- !u!50 &96849238
 Rigidbody2D:
@@ -88849,6 +88850,7 @@ MonoBehaviour:
   maxProgress: 100
   currentProgress: 0
   progressBar: {fileID: 688552502}
+  fillTableValue: 0.4
   poof: {fileID: 0}
 --- !u!114 &1293225541
 MonoBehaviour:

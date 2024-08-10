@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7609635920439532339}
   - component: {fileID: 3365067637406058854}
   - component: {fileID: 2711152061970850474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy4(Aunt)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody2D:
     m_Bits: 1280
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  deplete: 25
+  deplete: 18
 --- !u!222 &2711152061970850474
 CanvasRenderer:
   m_ObjectHideFlags: 0
