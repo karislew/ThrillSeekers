@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -55,9 +56,11 @@ public class PauseMenu : MonoBehaviour
         escape.Disable();
     }
 
+    // Selecting first buttion in the event system
+    public Button primaryButton;
     private void Start()
     {
-        
+        primaryButton.Select();
     }
 
     private void Update()
@@ -83,9 +86,9 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
 
         //clear selected object
-        EventSystem.current.SetSelectedGameObject(null);
+        //EventSystem.current.SetSelectedGameObject(null);
         //set a new selected game object
-        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+        //EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
     public void Resume()
@@ -93,14 +96,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Resuming game. . .");
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
-        tutorialMenuUI1.SetActive(false);
-        tutorialMenuUI2.SetActive(false);
-        tutorialMenuUI3.SetActive(false);
-        tutorialMenuUI4.SetActive(false);
-        tutorialMenuUI5.SetActive(false);
-        tutorialMenuUI6.SetActive(false);
-        tutorialMenuUI7.SetActive(false);
-        tutorialMenuUI8.SetActive(false);
+        CloseTutorialMenus();
         Time.timeScale = 1f;
         GameIsPaused = false;
         //clear selected object
@@ -127,7 +123,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        LevelManager.Instance.LoadScene("2DCookout", "CircleWipe");
+        LevelManager.Instance.LoadScene("2dCookout", "CircleWipe");
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -162,9 +158,28 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 0;
         GameIsPaused = true;
+        //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //set a new selected game object
         EventSystem.current.SetSelectedGameObject(tutorialFirstButton1);
+    }
+
+    public void CloseTutorialMenus()
+    {
+        Debug.Log("Closing Tutorial. . .");
+        tutorialMenuUI1.SetActive(false);
+        tutorialMenuUI2.SetActive(false);
+        tutorialMenuUI3.SetActive(false);
+        tutorialMenuUI4.SetActive(false);
+        tutorialMenuUI5.SetActive(false);
+        tutorialMenuUI6.SetActive(false);
+        tutorialMenuUI7.SetActive(false);
+        tutorialMenuUI8.SetActive(false);
+        Time.timeScale = 0;
+        GameIsPaused = true;
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(optionsCloseButton);
     }
 
 
