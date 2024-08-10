@@ -1,131 +1,7 @@
-/*
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class PTableInteract : MonoBehaviour
-{
-    //make progress
-    public int minProgress=0;
-    public int maxProgress=100;
-    public int currentProgress;
-    //public ProgressBar progressBar;
-    public Slider progressBar;
-    private WaitForSeconds regenTick = new WaitForSeconds(.1f);
-    private bool inTrig=false;
-    private Coroutine regen;
-    
-    /*
-    public static PTableInteract instance;
-   
-    // Start is called before the first frame update
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
-  
-    // Start is called before the first frame update
-    void Start()
-    {
-        //when we start game the current progress will be set to 0
-        currentProgress=minProgress;
-        progressBar.maxValue=maxProgress;
-        
-    }
-
-    // Update is called once per frame
-
-    
-    void Update()
-    {
-        //when we press e increase the bar 
-        if (inTrig)
-        {
-            if(Input.GetKey(KeyCode.Space)){
-                if(regen==null)
-                {
-                    regen = StartCoroutine(RegenStamina());
-                }
-
-
-            }
-            else if(Input.GetKeyUp(KeyCode.Space))
-            {
-                if(regen!=null)
-                {
-                    StopCoroutine(regen);   
-                    regen=null;
-                }
-            }
-
-            /*
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                IncreaseProgress(1);
-                Debug.Log("Current progress" + currentProgress);
-            }
-           
-        }
-        
-    }
-    
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.CompareTag("Table"))
-        {
-            Debug.Log("COLLIDEEE");
-            inTrig=true;
-
-           
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if(collider.gameObject.CompareTag("Table"))
-        {
-            Debug.Log("NOT COLLIDE");
-            inTrig=false;
-            if(regen!=null)
-            {
-                StopCoroutine(regen);
-                regen=null;
-            }
-
-           
-        }
-    }
-    /*
-    void IncreaseProgress(int progress)
-    {
-        //add the progress to current progress
-        currentProgress+=progress;
-        progressBar.value=currentProgress;
-    }
-   
-    private IEnumerator RegenStamina()
-    {
-        //yield return new WaitForSeconds(1f);
-        while(currentProgress<maxProgress)
-        {
-            currentProgress += maxProgress/50;
-            
-            progressBar.value=currentProgress;
-    
-            yield return regenTick;
-        }
-        regen=null;
-
-    }
-}
-*/
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PTableInteract : MonoBehaviour
 {
@@ -136,7 +12,26 @@ public class PTableInteract : MonoBehaviour
     private bool inTrig = false;
     private Coroutine regenCoroutine;
     public GameObject poof;
+
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
+
+    PlayerInputActions playerControls;
+    private InputAction space;
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
+    private void OnEnable()
+    {
+        space =playerControls.Player.SpaceKey;
+        space.Enable();
+    }
+    private void OnDisable()
+    {
+        space.Disable();
+    }
+
+
 
     void Start()
     {
@@ -149,8 +44,10 @@ public class PTableInteract : MonoBehaviour
 
     void Update()
     {
+        bool isSpaceHeld = space.ReadValue<float>() >0.1f;
+        // if (inTrig && Input.GetKey(KeyCode.Space))
         currentProgress = progressBar.value;
-        if (inTrig && Input.GetKey(KeyCode.Space))
+        if (inTrig && isSpaceHeld)
         {
             //poof.SetActive(true);
             if (regenCoroutine == null)
@@ -158,7 +55,8 @@ public class PTableInteract : MonoBehaviour
                 regenCoroutine = StartCoroutine(IncreaseProgress());
             }
         }
-        else if (!inTrig || !Input.GetKey(KeyCode.Space))
+        //else if (!inTrig || !Input.GetKey(KeyCode.Space))
+        else if (!inTrig || !isSpaceHeld)
         {
             //poof.SetActive(false);
             if (regenCoroutine != null)
