@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  deplete: 18
+  deplete: 8
 --- !u!222 &2711152061970850474
 CanvasRenderer:
   m_ObjectHideFlags: 0
