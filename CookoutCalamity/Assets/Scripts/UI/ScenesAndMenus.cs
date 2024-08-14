@@ -57,10 +57,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Selecting first buttion in the event system
-    public Button primaryButton;
+    //public Button primaryButton;
     private void Start()
     {
-        primaryButton.Select();
+        //primaryButton.Select();
     }
 
     private void Update()
