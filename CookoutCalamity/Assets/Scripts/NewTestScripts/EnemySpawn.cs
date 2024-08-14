@@ -10,14 +10,15 @@ public class EnemySpawn : MonoBehaviour
     //private Transform spawnPoint;
 
     public EnemyManagement enemyManagement;
+    public GameObject alertPrefab;
 
 
     //time between spawns 
-    private float timeBetweenSpawns=10f;
+    public float timeBetweenSpawns=5f;
     public WayPointManagement waypointManager;
 
     //time to spawn first 
-    private float countdown=2f;
+    private float countdown=3f;
 
     private int waveIndex = 0;
 
@@ -40,7 +41,7 @@ public class EnemySpawn : MonoBehaviour
     //can wait x seconds before continuing 
     IEnumerator SpawnEnemy()
     {
-        waveIndex=1;
+        waveIndex=Random.Range(1,1);
         
         //++ to get more enemies 
         for (int i=0;i<waveIndex;i++)
@@ -57,10 +58,23 @@ public class EnemySpawn : MonoBehaviour
     {
         Transform[] path = waypointManager.GetRandomPath();
         Transform spawnPoint= path[0];
+        GameObject alert=Instantiate(alertPrefab,spawnPoint.position,spawnPoint.rotation);
+        StartCoroutine(Wait(alert,spawnPoint,path));
+        
+        
+    }
+    
+    IEnumerator Wait(GameObject alert,Transform spawnPoint,Transform[] path)
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(alert);
+        yield return new WaitForSeconds(.1f);
+
         GameObject enemyPrefab = enemyManagement.GetRandom();
         GameObject enemy= Instantiate(enemyPrefab, spawnPoint.position,spawnPoint.rotation);
         
         enemy.GetComponent<TestMovement>().Initialize(path);
+        
     }
     
 }
