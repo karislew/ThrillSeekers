@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -84439,6 +84439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManagement: {fileID: 944265362}
+  alertPrefab: {fileID: 5076419915476337645, guid: f3877549c41d74579b8af2a4f6ce477d, type: 3}
   timeBetweenSpawns: 10
   waypointManager: {fileID: 962204345}
 --- !u!4 &1258583575

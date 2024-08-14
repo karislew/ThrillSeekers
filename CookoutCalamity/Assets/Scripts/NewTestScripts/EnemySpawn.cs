@@ -10,6 +10,7 @@ public class EnemySpawn : MonoBehaviour
     //private Transform spawnPoint;
 
     public EnemyManagement enemyManagement;
+    public GameObject alertPrefab;
 
 
     //time between spawns 
@@ -57,10 +58,23 @@ public class EnemySpawn : MonoBehaviour
     {
         Transform[] path = waypointManager.GetRandomPath();
         Transform spawnPoint= path[0];
+        GameObject alert=Instantiate(alertPrefab,spawnPoint.position,spawnPoint.rotation);
+        StartCoroutine(Wait(alert,spawnPoint,path));
+        
+        
+    }
+    
+    IEnumerator Wait(GameObject alert,Transform spawnPoint,Transform[] path)
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(alert);
+        yield return new WaitForSeconds(.1f);
+
         GameObject enemyPrefab = enemyManagement.GetRandom();
         GameObject enemy= Instantiate(enemyPrefab, spawnPoint.position,spawnPoint.rotation);
         
         enemy.GetComponent<TestMovement>().Initialize(path);
+        
     }
     
 }
