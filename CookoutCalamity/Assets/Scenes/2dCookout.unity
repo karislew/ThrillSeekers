@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -80860,14 +80860,14 @@ PrefabInstance:
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e8314acd820334c42b13a86c969689a5, type: 3}
+      objectReference: {fileID: 21300000, guid: c1b932e9e7ed25d40a931c37b9fed9b4, type: 3}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.b
-      value: 0.2028302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.g
-      value: 0.27219293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.r
@@ -84807,8 +84807,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e8314acd820334c42b13a86c969689a5, type: 3}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.b
-      value: 0.41037738
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.g
@@ -84816,7 +84820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.r
-      value: 0.4597871
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
