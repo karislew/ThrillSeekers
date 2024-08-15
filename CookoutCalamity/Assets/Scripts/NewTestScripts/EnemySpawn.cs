@@ -11,7 +11,8 @@ public class EnemySpawn : MonoBehaviour
 
     public EnemyManagement enemyManagement;
     public GameObject alertPrefab;
-
+     
+    
 
     //time between spawns 
     public float timeBetweenSpawns=5f;
@@ -39,7 +40,9 @@ public class EnemySpawn : MonoBehaviour
 
     }
     //can wait x seconds before continuing 
+
     IEnumerator SpawnEnemy()
+
     {
         waveIndex=Random.Range(1,1);
         
@@ -49,6 +52,11 @@ public class EnemySpawn : MonoBehaviour
             //spawn after a few seconds if ai wanted to spawn more than one enemy at a time 
             WaveSpawnEnemy();
             yield return new WaitForSeconds(.5f);
+
+           
+                
+            
+            
         }
 
 
