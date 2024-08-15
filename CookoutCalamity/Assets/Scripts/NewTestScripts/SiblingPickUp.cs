@@ -8,6 +8,7 @@ public class SiblingPickUp : MonoBehaviour
     public Transform holdSpot;
     public LayerMask pickUpMask;
     public AudioClip audiopickup;
+    public AudioClip audiodrop;
 
     public Vector3 Direction { get; set; }
 
@@ -77,6 +78,8 @@ public class SiblingPickUp : MonoBehaviour
             if (interaction != null)
             {
                 interaction.OnDropped();
+
+                AudioSource.PlayClipAtPoint(audiodrop, transform.position, 0.5f);
             }
 
             itemHolding = null;
