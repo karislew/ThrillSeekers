@@ -30,7 +30,7 @@ public class EnemyManagement : MonoBehaviour
     public GameObject GetRandom()
     {
         int randomIndex = Random.Range(0,enemies.Count);
-        if (randomIndex == 0)
+        /*if (randomIndex == 0)
             {
             Debug.Log("Play Mom");
             AudioSource mom = GetComponent<AudioSource>();
@@ -54,6 +54,7 @@ public class EnemyManagement : MonoBehaviour
             uncle.Play();
             Debug.Log("uncle");
         }
+        */
 
         return enemies[randomIndex];
     }
