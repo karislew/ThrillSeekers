@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 18
-  deplete: 20
+  deplete: 25
 --- !u!70 &5191897653628732060
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

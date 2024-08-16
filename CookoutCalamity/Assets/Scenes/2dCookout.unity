@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -82730,6 +82730,7 @@ MonoBehaviour:
   - {fileID: 1443461449}
   - {fileID: 740836637}
   - {fileID: 1809043866}
+  waypoints3: []
 --- !u!4 &962204346
 Transform:
   m_ObjectHideFlags: 0
@@ -90935,7 +90936,7 @@ PrefabInstance:
       objectReference: {fileID: 1881487122}
     - target: {fileID: 4389497188559616204, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: Duration
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4389497188559616204, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: speechUI
