@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -83122,6 +83122,7 @@ MonoBehaviour:
   - {fileID: 1443461449}
   - {fileID: 740836637}
   - {fileID: 1809043866}
+  waypoints3: []
 --- !u!4 &962204346
 Transform:
   m_ObjectHideFlags: 0
@@ -91440,18 +91441,18 @@ PrefabInstance:
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e8314acd820334c42b13a86c969689a5, type: 3}
+      objectReference: {fileID: 21300000, guid: 45af0993995219b44b199e1bf071a574, type: 3}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.b
-      value: 0.2235294
+      value: 0.8915094
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.g
-      value: 0.24731289
+      value: 0.8915094
       objectReference: {fileID: 0}
     - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.8915094
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
