@@ -39,9 +39,24 @@ public class PauseMenu : MonoBehaviour
     public GameObject tutorialFirstButton8;
     // Tutorial Navigation Setup
 
+    // Grabbing the event system to detect first selected object and detect what input device is being used.
+    public EventSystem eventSystemUI; 
+    public void PointerExit()
+    {
+        eventSystemUI.SetSelectedGameObject(null);
+
+        if (Input.GetAxisRaw("Vertical") != 0 && (eventSystemUI.currentSelectedGameObject == null || !eventSystemUI.currentSelectedGameObject.activeSelf))
+        {
+            eventSystemUI.SetSelectedGameObject(eventSystemUI.firstSelectedGameObject);
+        }
+    }
+
+
+
     //Inputs for Keyboard and Controller
     PlayerInputActions playerControls;
     private InputAction escape;
+    private InputAction restartGame;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -50,10 +65,14 @@ public class PauseMenu : MonoBehaviour
     {
         escape = playerControls.UI.EscapeKey;
         escape.Enable();
+
+        restartGame = playerControls.Player.DebugRestart;
+        restartGame.Enable();
     }
     private void OnDisable()
     {
         escape.Disable();
+        restartGame.Disable();
     }
 
     // Selecting first buttion in the event system
@@ -76,6 +95,12 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (restartGame.triggered) 
+        {
+            LoadGameScene();
+        }
+
     }
 
         void Pause()
