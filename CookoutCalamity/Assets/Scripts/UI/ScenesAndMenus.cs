@@ -98,7 +98,7 @@ public class PauseMenu : MonoBehaviour
 
         if (restartGame.triggered) 
         {
-            LoadGameScene();
+            LoadMainMenu();
         }
 
     }
@@ -148,7 +148,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadGameScene()
     {
         Debug.Log("Loading game scene. . .");
-        LevelManager.Instance.LoadScene("2dCookout", "CircleWipe");
+        LevelManager.Instance.LoadScene("2dCookout (3 Path)", "CircleWipe");
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

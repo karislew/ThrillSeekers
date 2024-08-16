@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 7f6a2ae9ec9da4e478acfbccdc419f9a
+  - enabled: 1
+    path: Assets/Scenes/2dCookout (3 Path).unity
+    guid: 38a8a8ad5fb25564f9e90065c7f62dc3
   m_configObjects: {}

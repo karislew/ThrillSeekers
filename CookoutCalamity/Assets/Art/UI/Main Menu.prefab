@@ -1989,6 +1989,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 3346858246386945318}
+    - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 6104388341560032039}
+    - target: {fileID: 5703807530156017113, guid: c024e9b3d8db2454497413550caef973, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 15a5c618c5804a2408c01d666d0d5bea, type: 3}
@@ -2369,6 +2377,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8272654642422145121}
     - target: {fileID: 1534131985237904271, guid: 3a4201b3772361a41a90d69b8a5623ab, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 3346858246386945318}
+    - target: {fileID: 1534131985237904271, guid: 3a4201b3772361a41a90d69b8a5623ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2102632819442455304}
@@ -2470,6 +2482,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5795496898454742828, guid: 3a4201b3772361a41a90d69b8a5623ab, type: 3}
   m_PrefabInstance: {fileID: 4755080146976977064}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6104388341560032039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1534131985237904271, guid: 3a4201b3772361a41a90d69b8a5623ab, type: 3}
+  m_PrefabInstance: {fileID: 4755080146976977064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5076975719078939669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2909,6 +2932,10 @@ PrefabInstance:
       value: Quit Button (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5361590550978635210, guid: aeb636da712096d44a92b7fbb551faef, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 6104388341560032039}
+    - target: {fileID: 5361590550978635210, guid: aeb636da712096d44a92b7fbb551faef, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 8272654642422145121}
@@ -3006,3 +3033,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8689694018445353509, guid: aeb636da712096d44a92b7fbb551faef, type: 3}
   m_PrefabInstance: {fileID: 7213183191536314604}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3346858246386945318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5361590550978635210, guid: aeb636da712096d44a92b7fbb551faef, type: 3}
+  m_PrefabInstance: {fileID: 7213183191536314604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

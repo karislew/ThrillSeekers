@@ -7,13 +7,14 @@ public class TestMovement : MonoBehaviour
     
     //array of points to walk from one place to another 
     private Transform[] waypoints;
-
+    private Animator animator;
 
     
     [SerializeField]
     public static TestMovement instance;
     public float speed=4;
     public float deplete = 10f;
+    private Vector2 movement;
 
     //index of current waypoint
     private int waypointIndex = 0;
@@ -25,7 +26,10 @@ public class TestMovement : MonoBehaviour
 
    //private Transform[] waypoints; 
 
-
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void Initialize(Transform[] waypoints)
     {
@@ -34,7 +38,14 @@ public class TestMovement : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    
+
+    void Update()
+    {
+        if (this.transform.position.x > 0)
+        {
+            //animator.SetFloat("Horizontal", EnemyMovement.x);
+        }
+    }
 
     void FixedUpdate()
     {
