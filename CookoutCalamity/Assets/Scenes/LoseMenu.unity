@@ -990,9 +990,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8896806120429715290, guid: 36ee59df5537d2c429323a1ae5d93fea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4574513026277906327}
-    - targetCorrespondingSourceObject: {fileID: 5335074270720231240, guid: 36ee59df5537d2c429323a1ae5d93fea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4574513026277906328}
   m_SourcePrefab: {fileID: 100100000, guid: 36ee59df5537d2c429323a1ae5d93fea, type: 3}
 --- !u!114 &4574513026277906324 stripped
 MonoBehaviour:
@@ -1010,17 +1007,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6245508499802062660, guid: 36ee59df5537d2c429323a1ae5d93fea, type: 3}
   m_PrefabInstance: {fileID: 4574513026277906323}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4574513026277906326}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4574513026277906326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5335074270720231240, guid: 36ee59df5537d2c429323a1ae5d93fea, type: 3}
-  m_PrefabInstance: {fileID: 4574513026277906323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4574513026277906327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,51 +1047,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4574513026277906324}
-          m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-          m_MethodName: Select
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &4574513026277906328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4574513026277906326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4574513026277906325}
-          m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-          m_MethodName: OnDeselect
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4574513026277906325}
           m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
           m_MethodName: Select
           m_Mode: 1
