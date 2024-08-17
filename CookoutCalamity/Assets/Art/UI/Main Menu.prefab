@@ -961,6 +961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Step 5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496459435144657361, guid: 4565c076229d5da4fa5d8d1bf4fdd529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7267929982121977912, guid: 4565c076229d5da4fa5d8d1bf4fdd529, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1234,6 +1238,10 @@ PrefabInstance:
     - target: {fileID: 635207538124183575, guid: 959ef6f925ae05643bce6565956a3770, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411398530511935060, guid: 959ef6f925ae05643bce6565956a3770, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2610693213163146799, guid: 959ef6f925ae05643bce6565956a3770, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1557,6 +1565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4359243397973254846, guid: a8c1b3e64552bd04d906f38ff40b577d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4789678550817755291, guid: a8c1b3e64552bd04d906f38ff40b577d, type: 3}
       propertyPath: m_Name
       value: Tutorial Step 3 (1)
@@ -1802,6 +1814,10 @@ PrefabInstance:
     - target: {fileID: 4836525485449578654, guid: c0484b0bd2c718e40a7b1ee7f92274c9, type: 3}
       propertyPath: m_Name
       value: Tutorial Step 6 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426774793169136901, guid: c0484b0bd2c718e40a7b1ee7f92274c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5792462429689803871, guid: c0484b0bd2c718e40a7b1ee7f92274c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2079,6 +2095,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6978459807531153255}
     m_Modifications:
+    - target: {fileID: 582783752419451751, guid: d22dafee7a059c64f911883fd24ad361, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2414558999403608157, guid: d22dafee7a059c64f911883fd24ad361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -3146,6 +3166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6978459807531153255}
     m_Modifications:
+    - target: {fileID: 472573734922157861, guid: 19007fce914204b4c943dc2bc317172c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2182594922341334451, guid: 19007fce914204b4c943dc2bc317172c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -3537,6 +3561,10 @@ PrefabInstance:
     - target: {fileID: 2781669633985057002, guid: 9d7b532853699e641828634b65c90ce4, type: 3}
       propertyPath: m_Name
       value: Tutorial Step 7 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986772262673027706, guid: 9d7b532853699e641828634b65c90ce4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7918889939831723513, guid: 9d7b532853699e641828634b65c90ce4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

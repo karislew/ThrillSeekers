@@ -80985,10 +80985,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 3771603088849782406, guid: 28d5a6e4f04670e468c729d17d62f338, type: 3}
-      propertyPath: cameraSound
-      value: 
-      objectReference: {fileID: 581418793}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
