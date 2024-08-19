@@ -305,6 +305,28 @@
                 },
                 {
                     "name": "",
+                    "id": "48543864-17d2-4ff0-a729-ef765bb8f844",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SpaceKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2c4f9b9e-ed47-4cdd-8f6b-6dc09c3fd01c",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SpaceKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7fe8b4ce-9a0d-44a9-8840-2065438c88c8",
                     "path": "<Keyboard>/e",
                     "interactions": "",
