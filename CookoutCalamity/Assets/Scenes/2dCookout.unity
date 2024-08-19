@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -82873,7 +82873,14 @@ MonoBehaviour:
   - {fileID: 1443461449}
   - {fileID: 740836637}
   - {fileID: 1809043866}
-  waypoints3: []
+  waypoints3:
+  - {fileID: 252424583}
+  - {fileID: 650911064}
+  - {fileID: 1621065865}
+  - {fileID: 846771229}
+  - {fileID: 1826141903}
+  - {fileID: 1479791833}
+  - {fileID: 756021069}
 --- !u!4 &962204346
 Transform:
   m_ObjectHideFlags: 0
