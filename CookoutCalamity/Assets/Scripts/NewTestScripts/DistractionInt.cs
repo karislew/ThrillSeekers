@@ -50,6 +50,9 @@ public class DistractionInt : MonoBehaviour
                 Being(Duration);
 
                 nearestEnemy.GetComponent<TestMovement>().enabled = false;
+                nearestEnemy.GetComponent<Animator>().SetFloat("Speed",0);
+                nearestEnemy.GetComponent<Animator>().SetFloat("Horizontal",1);
+                nearestEnemy.GetComponent<Animator>().SetFloat("Vertical",0);
                 interactionScript.SetPickUpState(false);
 
                 if (target.transform.position != siblingSpot.transform.position)
