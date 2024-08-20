@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   maxProgress: 100
   currentProgress: 0
   progressBar: {fileID: 1425934619}
-  fillTableValue: 0.4
+  fillTableValue: 0.45
   poof: {fileID: 988456607}
 --- !u!114 &96849237
 MonoBehaviour:
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2db4d7a99f641e68f5bf37e47b4349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 27
+  moveSpeed: 29
   rb: {fileID: 96849238}
 --- !u!50 &96849238
 Rigidbody2D:
@@ -4273,7 +4273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12248474, y: -7.594022}
+  m_Offset: {x: 0.0062146187, y: -7.594022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4284,7 +4284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7113239, y: 0.40252638}
+  m_Size: {x: 0.6817279, y: 0.40252686}
   m_EdgeRadius: 0
 --- !u!1 &325880329
 GameObject:
@@ -10213,11 +10213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.2
+      value: 4.266667
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.8
+      value: 2.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19524,11 +19524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.2
+      value: 4.042105
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.8
+      value: 2.2736843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21992,7 +21992,7 @@ Transform:
   m_GameObject: {fileID: 1440999622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.22, y: -5.56, z: 0}
+  m_LocalPosition: {x: 17.52, y: -5.56, z: 0}
   m_LocalScale: {x: 1.3536, y: 1.3536, z: 1.3536}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22082,7 +22082,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023860931, y: -1.8611605}
+  m_Offset: {x: -0.031629264, y: -1.9468405}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22093,7 +22093,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2822909, y: 0.5076361}
+  m_Size: {x: 0.3944553, y: 0.33627594}
   m_EdgeRadius: 0
 --- !u!50 &1440999626
 Rigidbody2D:
@@ -22319,6 +22319,7 @@ GameObject:
   - component: {fileID: 1471762276}
   - component: {fileID: 1471762275}
   - component: {fileID: 1471762279}
+  - component: {fileID: 1471762280}
   m_Layer: 0
   m_Name: Table (1)
   m_TagString: Table
@@ -22726,6 +22727,24 @@ PolygonCollider2D:
       - {x: -12.125, y: -0.5}
       - {x: -12.0625, y: -0.5625}
   m_UseDelaunayMesh: 0
+--- !u!114 &1471762280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471762273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.028301895, g: 0.019891426, b: 0.019891426, a: 1}
+  outlineWidth: 30
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1477266155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27527,6 +27546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sib3RangeCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 6152531877650939727, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
+      propertyPath: outlineWidth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6270282171705682997, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_Radius
       value: 2.0454214
@@ -27555,13 +27578,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7977831190935885477, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.2
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 7980735826516344603, guid: 6f696193cca4e41d4910991cf5e186f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.8
+      value: 2.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

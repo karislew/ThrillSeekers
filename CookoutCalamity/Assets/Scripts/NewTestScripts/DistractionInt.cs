@@ -59,6 +59,7 @@ public class DistractionInt : MonoBehaviour
                 {
                     nearestEnemy.GetComponent<Rigidbody2D>().simulated = false;
                     target.transform.position = siblingSpot.transform.position;
+                    
                 }
 
                 //StartCoroutine(Wait(nearestEnemy, siblingPosition));
