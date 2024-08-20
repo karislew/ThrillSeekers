@@ -22319,7 +22319,6 @@ GameObject:
   - component: {fileID: 1471762276}
   - component: {fileID: 1471762275}
   - component: {fileID: 1471762279}
-  - component: {fileID: 1471762280}
   m_Layer: 0
   m_Name: Table (1)
   m_TagString: Table
@@ -22727,24 +22726,6 @@ PolygonCollider2D:
       - {x: -12.125, y: -0.5}
       - {x: -12.0625, y: -0.5625}
   m_UseDelaunayMesh: 0
---- !u!114 &1471762280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471762273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 0.028301895, g: 0.019891426, b: 0.019891426, a: 1}
-  outlineWidth: 30
-  precomputeOutline: 1
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &1477266155
 PrefabInstance:
   m_ObjectHideFlags: 0

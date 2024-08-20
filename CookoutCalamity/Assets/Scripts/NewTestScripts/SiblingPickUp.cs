@@ -62,7 +62,7 @@ public class SiblingPickUp : MonoBehaviour
                 itemHolding.transform.position = holdSpot.position;
                 itemHolding.transform.parent = transform;
                 interaction.OnPickedUp();
-                itemHolding.GetComponent<Outline>().enabled = false;
+                //itemHolding.GetComponent<Outline>().enabled = false;
 
                 AudioSource.PlayClipAtPoint(audiopickup, transform.position, 0.5f);
             }
@@ -75,7 +75,7 @@ public class SiblingPickUp : MonoBehaviour
         {
             itemHolding.transform.position = holdSpot.position + Direction;
             itemHolding.transform.parent = null;
-            itemHolding.GetComponent<Outline>().enabled = true;
+            //itemHolding.GetComponent<Outline>().enabled = true;
 
             Interactions interaction = itemHolding.GetComponent<Interactions>();
             if (interaction != null)
