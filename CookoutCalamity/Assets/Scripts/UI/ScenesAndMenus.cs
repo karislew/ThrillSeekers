@@ -12,6 +12,10 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    private PlayerMovement playerMove_script;
+    private PTableInteract playerTable_script;
+    private SiblingPickUp playerSibling_script;
+    public GameObject player;
 
     // The first button selected when you pause the game
     public GameObject pauseFirstButton;
@@ -57,9 +61,11 @@ public class PauseMenu : MonoBehaviour
     PlayerInputActions playerControls;
     private InputAction escape;
     private InputAction restartGame;
+    private PlayerInput playerInput;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        playerInput = GetComponent<PlayerInput>();
     }
     private void OnEnable()
     {
@@ -68,18 +74,21 @@ public class PauseMenu : MonoBehaviour
 
         restartGame = playerControls.Player.DebugRestart;
         restartGame.Enable();
+        
     }
     private void OnDisable()
     {
         escape.Disable();
         restartGame.Disable();
+        
     }
 
-    // Selecting first buttion in the event system
-    //public Button primaryButton;
+   
     private void Start()
     {
-        //primaryButton.Select();
+        playerMove_script = player.GetComponent<PlayerMovement>();
+        playerTable_script = player.GetComponent<PTableInteract>();
+        playerSibling_script = player.GetComponent<SiblingPickUp>();
     }
 
     private void Update()
@@ -90,9 +99,15 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+                playerMove_script.enabled = true;
+                playerTable_script.enabled = true;
+                playerSibling_script.enabled = true;
             } else
             {
                 Pause();
+                playerMove_script.enabled = false;
+                playerTable_script.enabled = false;
+                playerSibling_script.enabled = false;
             }
         }
 
@@ -107,8 +122,9 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Pausing game. . .");
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         GameIsPaused = true;
+        
 
         //clear selected object
         //EventSystem.current.SetSelectedGameObject(null);
@@ -124,6 +140,8 @@ public class PauseMenu : MonoBehaviour
         CloseTutorialMenus();
         Time.timeScale = 1f;
         GameIsPaused = false;
+        
+
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //set a new selected game object
