@@ -13,6 +13,8 @@ public class PTableInteract : MonoBehaviour
     private bool inTrig = false;
     private Coroutine regenCoroutine;
     public GameObject poof;
+    private Animator animator;
+    private bool tableSetUp;
 
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
 
@@ -21,6 +23,7 @@ public class PTableInteract : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
@@ -55,6 +58,8 @@ public class PTableInteract : MonoBehaviour
             {
                 regenCoroutine = StartCoroutine(IncreaseProgress());
             }
+
+            animator.SetBool("tableSetUp", true);
         }
         //else if (!inTrig || !Input.GetKey(KeyCode.Space))
         else if (!inTrig || !isSpaceHeld)
@@ -65,7 +70,9 @@ public class PTableInteract : MonoBehaviour
                 StopCoroutine(regenCoroutine);
                 regenCoroutine = null;
             }
-            
+
+            animator.SetBool("tableSetUp", false);
+
         }
         //progressBar.value=currentProgress;
     }
