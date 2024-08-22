@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     private PTableInteract playerTable_script;
     private SiblingPickUp playerSibling_script;
     public GameObject player;
+    public AudioSource audioSource;
 
     // The first button selected when you pause the game
     public GameObject pauseFirstButton;
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
     private InputAction escape;
     private InputAction restartGame;
     private PlayerInput playerInput;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -94,17 +96,20 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         bool isESCPressed = escape.triggered;
+        
+
         if (isESCPressed)
         {
             if (GameIsPaused)
             {
+
                 Resume();
-                playerMove_script.enabled = true;
-                playerTable_script.enabled = true;
-                playerSibling_script.enabled = true;
+                audioSource.Play();
+                
             } else
             {
                 Pause();
+              
                 playerMove_script.enabled = false;
                 playerTable_script.enabled = false;
                 playerSibling_script.enabled = false;
@@ -117,6 +122,7 @@ public class PauseMenu : MonoBehaviour
         }
 
     }
+    
 
         void Pause()
     {
@@ -134,12 +140,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+       
         Debug.Log("Resuming game. . .");
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
         CloseTutorialMenus();
         Time.timeScale = 1f;
         GameIsPaused = false;
+        playerMove_script.enabled = true;
+        playerTable_script.enabled = true;
+        playerSibling_script.enabled = true;
         
 
         //clear selected object

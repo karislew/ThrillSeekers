@@ -555,6 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 2517252979233538850}
   optionsMenuUI: {fileID: 8862165709265650876}
+  player: {fileID: 0}
   pauseFirstButton: {fileID: 6495090192972705140}
   optionsCloseButton: {fileID: 6495090192972705140}
   tutorialMenuUI1: {fileID: 1817341537477004917}
@@ -574,6 +575,7 @@ MonoBehaviour:
   tutorialFirstButton7: {fileID: 2173072166070540581}
   tutorialFirstButton8: {fileID: 4414732533879089040}
   eventSystemUI: {fileID: 0}
+  buttonOne: {fileID: 0}
 --- !u!1 &1672701672353513067
 GameObject:
   m_ObjectHideFlags: 0
