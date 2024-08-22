@@ -16,63 +16,91 @@ public class GameCountdown : MonoBehaviour
     private float timer;
     public bool hasPlayed = false;
     public AudioClip countdown;
+     private bool gameEnded = false;  // Flag to prevent repeated scene loads
 
     void Start()
     {
         currentProgress_script = player.GetComponent<PTableInteract>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         timer += Time.deltaTime;
-        if (timer > delay)
+        if (timer > delay && !gameEnded)
         {
             CountDownClock();
         }
-
     }
+
     public void CountDownClock()
     {
+        // Reduce the time if above zero
         if (remainingTime > 0)
         {
-            if (remainingTime <= 21 && hasPlayed == false)
+            if (remainingTime <= 21 && !hasPlayed)
             {
-
                 Debug.Log("Start countdown");
                 AudioSource scriptedCountdown = GetComponent<AudioSource>();
                 scriptedCountdown.Play();
                 hasPlayed = true;
             }
             remainingTime -= Time.deltaTime;
-        }
-        //remainingTime <= 0 && currentProgress_script.currentProgress < 90
 
-        else if (remainingTime <= 0 && progressBar.value < 90)
-        {
-            Debug.Log("IN THIS " + remainingTime);
-            remainingTime = 0;
-            SceneManager.LoadScene("LoseMenu");
-            Debug.Log("You Lose!");
+            // Clamp remaining time to zero to avoid negative values
+            if (remainingTime < 0)
+            {
+                remainingTime = 0;
+            }
         }
-        //remainingTime <= 0 && currentProgress_script.currentProgress > 90
-        else if (remainingTime <= 0 && progressBar.value > 98)
+
+        // Handle win/lose conditions once the timer hits zero or the progress bar is full
+        if (remainingTime == 0)
         {
-            remainingTime = 0;
-            SceneManager.LoadScene("WinMenu");
-            Debug.Log("You Win!");
+            EndGame();
         }
-        //remainingTime > 0 && currentProgress_script.currentProgress 
-        if (remainingTime > 0 && progressBar.value == 100)
+        else if (progressBar.value == 100)
         {
-            //remainingTime = 0;
-            SceneManager.LoadScene("WinMenu");
-            Debug.Log("You Win!");
+            WinGame();
         }
-        // This has to be below all the if statements for the timer to stop counting at 0, and not go negative for 1 half of a second.
+
+        // Update timer text (ensure it never shows negative time)
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    private void EndGame()
+    {
+        // Check conditions once and handle win/lose
+        if (!gameEnded)
+        {
+             // Prevent repeated calls
+
+            // Lose condition
+            if (progressBar.value < 90)
+            {
+                Debug.Log("You Lose!");
+                SceneManager.LoadScene("LoseMenu");
+                gameEnded = true;
+            }
+            // Win condition if progress bar is above the threshold
+            else if (progressBar.value >= 98)
+            {
+                Debug.Log("You Win!");
+                SceneManager.LoadScene("WinMenu");
+                gameEnded = true;
+            }
+        }
+    }
+
+    private void WinGame()
+    {
+        // Trigger win when progress bar hits 100
+        if (!gameEnded)
+        {
+            gameEnded = true;  // Prevent repeated calls
+            Debug.Log("You Win!");
+            SceneManager.LoadScene("WinMenu");
+        }
     }
 }
