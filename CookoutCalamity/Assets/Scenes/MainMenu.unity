@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,6 +586,11 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &2006274986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4935791374094126080, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+  m_PrefabInstance: {fileID: 583115631332877472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &583115631332877472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +603,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+      propertyPath: startMenuUI
+      value: 
+      objectReference: {fileID: 2006274986}
     - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
       propertyPath: eventSystemUI
       value: 
