@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     private SiblingPickUp playerSibling_script;
     public GameObject player;
     public AudioSource audioSource;
+    public GameObject startMenuUI;
 
     // The first button selected when you pause the game
     public GameObject pauseFirstButton;
@@ -130,6 +131,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        startMenuUI.SetActive(false);
         
 
         //clear selected object
@@ -150,6 +152,7 @@ public class PauseMenu : MonoBehaviour
         playerMove_script.enabled = true;
         playerTable_script.enabled = true;
         playerSibling_script.enabled = true;
+        startMenuUI.SetActive(true);
         
 
         //clear selected object
