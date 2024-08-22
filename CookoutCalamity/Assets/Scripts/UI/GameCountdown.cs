@@ -10,6 +10,9 @@ public class GameCountdown : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
     public Slider progressBar;
+    private PlayerMovement playerMove_script;
+    private PTableInteract playerTable_script;
+    private SiblingPickUp playerSibling_script;
     public GameObject player;
     private PTableInteract currentProgress_script;
     public float delay = 0.5f;
@@ -20,7 +23,10 @@ public class GameCountdown : MonoBehaviour
 
     void Start()
     {
-        currentProgress_script = player.GetComponent<PTableInteract>();
+        playerMove_script = player.GetComponent<PlayerMovement>();
+        playerTable_script = player.GetComponent<PTableInteract>();
+        playerSibling_script = player.GetComponent<SiblingPickUp>();
+
     }
 
     void Update()
@@ -50,6 +56,9 @@ public class GameCountdown : MonoBehaviour
             if (remainingTime < 0)
             {
                 remainingTime = 0;
+                playerMove_script.enabled = false;
+                playerTable_script.enabled = false;
+                playerSibling_script.enabled = false;
             }
         }
 
@@ -79,8 +88,10 @@ public class GameCountdown : MonoBehaviour
             // Lose condition
             if (progressBar.value < 90)
             {
+                
                 Debug.Log("You Lose!");
                 SceneManager.LoadScene("LoseMenu");
+                StartCoroutine(Wait());
                 gameEnded = true;
             }
             // Win condition if progress bar is above the threshold
@@ -102,5 +113,9 @@ public class GameCountdown : MonoBehaviour
             Debug.Log("You Win!");
             SceneManager.LoadScene("WinMenu");
         }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.1f);
     }
 }
