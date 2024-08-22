@@ -14,8 +14,8 @@ public class DistractionInt : MonoBehaviour
 
     [SerializeField] private Image uiFill;
     public GameObject uiTimer;
-    public int Duration;
-    private int remainingDuration;
+    public float Duration;
+    private float remainingDuration;
  
 
 
@@ -112,7 +112,7 @@ public class DistractionInt : MonoBehaviour
         }
     }
 
-    private void Being(int seconds)
+    private void Being(float seconds)
     {
         remainingDuration=seconds;
         
