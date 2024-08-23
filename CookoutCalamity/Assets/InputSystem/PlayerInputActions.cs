@@ -383,7 +383,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7c5d46d0-9a3e-42d4-9f72-b3eeaca5001d"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
