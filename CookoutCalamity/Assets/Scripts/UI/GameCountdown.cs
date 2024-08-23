@@ -19,10 +19,12 @@ public class GameCountdown : MonoBehaviour
     private float timer;
     public bool hasPlayed = false;
     public AudioClip countdown;
-     private bool gameEnded = false;  // Flag to prevent repeated scene loads
+    private bool gameEnded = false;  // Flag to prevent repeated scene loads
+    private Animator animator;
 
     void Start()
     {
+        animator = player.GetComponent<Animator>();
         playerMove_script = player.GetComponent<PlayerMovement>();
         playerTable_script = player.GetComponent<PTableInteract>();
         playerSibling_script = player.GetComponent<SiblingPickUp>();
@@ -56,6 +58,8 @@ public class GameCountdown : MonoBehaviour
             if (remainingTime < 0)
             {
                 remainingTime = 0;
+                animator.SetFloat("Speed", 0);
+                animator.SetBool("tableSetUp", false);
                 playerMove_script.enabled = false;
                 playerTable_script.enabled = false;
                 playerSibling_script.enabled = false;
@@ -86,20 +90,20 @@ public class GameCountdown : MonoBehaviour
              // Prevent repeated calls
 
             // Lose condition
-            if (progressBar.value < 90)
+            if (progressBar.value < 98)
             {
                 
                 Debug.Log("You Lose!");
-                SceneManager.LoadScene("LoseMenu");
-                StartCoroutine(Wait());
-                gameEnded = true;
+                
+                StartCoroutine(Wait("LoseMenu"));
+                
             }
             // Win condition if progress bar is above the threshold
             else if (progressBar.value >= 98)
             {
                 Debug.Log("You Win!");
-                SceneManager.LoadScene("WinMenu");
-                gameEnded = true;
+                StartCoroutine(Wait("WinMenu"));
+                
             }
         }
     }
@@ -114,8 +118,10 @@ public class GameCountdown : MonoBehaviour
             SceneManager.LoadScene("WinMenu");
         }
     }
-    IEnumerator Wait()
+    IEnumerator Wait(string screenName)
     {
         yield return new WaitForSeconds(.1f);
+        SceneManager.LoadScene(screenName);
+        gameEnded = true;
     }
 }
