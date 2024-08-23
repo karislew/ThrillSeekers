@@ -19,10 +19,16 @@ public class GameCountdown : MonoBehaviour
     private float timer;
     public bool hasPlayed = false;
     public AudioClip countdown;
-     private bool gameEnded = false;  // Flag to prevent repeated scene loads
+    public GameObject tableState;
+    private bool gameEnded = false;  // Flag to prevent repeated scene loads
 
+  
+    private Animator animator;
+
+    
     void Start()
     {
+        animator = player.GetComponent<Animator>();
         playerMove_script = player.GetComponent<PlayerMovement>();
         playerTable_script = player.GetComponent<PTableInteract>();
         playerSibling_script = player.GetComponent<SiblingPickUp>();
@@ -55,10 +61,14 @@ public class GameCountdown : MonoBehaviour
             // Clamp remaining time to zero to avoid negative values
             if (remainingTime < 0)
             {
-                remainingTime = 0;
                 playerMove_script.enabled = false;
                 playerTable_script.enabled = false;
                 playerSibling_script.enabled = false;
+                tableState.SetActive(false);
+                animator.SetFloat("Speed",0);
+                animator.SetBool("tableSetUp",false);
+                remainingTime = 0;
+                
             }
         }
 
@@ -86,20 +96,16 @@ public class GameCountdown : MonoBehaviour
              // Prevent repeated calls
 
             // Lose condition
-            if (progressBar.value < 90)
+            if (progressBar.value < 98)
             {
+                StartCoroutine(Wait("LoseMenu"));
                 
-                Debug.Log("You Lose!");
-                SceneManager.LoadScene("LoseMenu");
-                StartCoroutine(Wait());
-                gameEnded = true;
             }
             // Win condition if progress bar is above the threshold
             else if (progressBar.value >= 98)
             {
-                Debug.Log("You Win!");
-                SceneManager.LoadScene("WinMenu");
-                gameEnded = true;
+                StartCoroutine(Wait("WinMenu"));
+                
             }
         }
     }
@@ -109,13 +115,22 @@ public class GameCountdown : MonoBehaviour
         // Trigger win when progress bar hits 100
         if (!gameEnded)
         {
+            
             gameEnded = true;  // Prevent repeated calls
             Debug.Log("You Win!");
             SceneManager.LoadScene("WinMenu");
         }
     }
-    IEnumerator Wait()
+    IEnumerator Wait(string screenName)
     {
-        yield return new WaitForSeconds(.1f);
+        Debug.Log("WAITINGGGGG");
+        yield return new WaitForSeconds(1f);
+        Debug.Log("You Lose!");
+                
+        SceneManager.LoadScene(screenName);
+               
+        gameEnded = true;
+        
     }
+    
 }
