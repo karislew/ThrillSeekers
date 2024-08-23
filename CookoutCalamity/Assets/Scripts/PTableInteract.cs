@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class PTableInteract : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class PTableInteract : MonoBehaviour
     public GameObject poof;
     private Animator animator;
     private bool tableSetUp;
-
+    private bool isSpaceHeld;
+    //private AudioSource table_sfx;
+    //public AudioClip fork;
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
 
     PlayerInputActions playerControls;
@@ -24,6 +27,7 @@ public class PTableInteract : MonoBehaviour
     {
         playerControls = new PlayerInputActions();
         animator = GetComponent<Animator>();
+        //table_sfx = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -103,8 +107,16 @@ public class PTableInteract : MonoBehaviour
             
             currentProgress+=fillTableValue;
             progressBar.value = currentProgress;
-           // Debug.Log("Current Progress: " + currentProgress);
+            // Debug.Log("Current Progress: " + currentProgress);
+           
             yield return progressTick;
         }
+        // attempt at interaction queue
+        /*if (fillTableValue == 20 && isSpaceHeld)
+        
+        {
+            table_sfx.PlayOneShot(fork);
+        }
+        */
     }
 }
