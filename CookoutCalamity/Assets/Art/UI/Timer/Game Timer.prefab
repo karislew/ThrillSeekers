@@ -308,6 +308,8 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   player: {fileID: 0}
   delay: 0.5
+  hasPlayed: 0
+  countdown: {fileID: 0}
 --- !u!1 &9097825254404190161
 GameObject:
   m_ObjectHideFlags: 0
