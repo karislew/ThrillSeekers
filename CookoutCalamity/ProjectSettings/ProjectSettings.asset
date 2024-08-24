@@ -42,7 +42,7 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: ab29aa00de9ce6241b41b44a2761ba21, type: 3}
+  - logo: {fileID: 21300000, guid: 3f915b7da1c09a14bb24f08fc9d7481f, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -288,7 +288,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: ab29aa00de9ce6241b41b44a2761ba21, type: 3}
+      m_Icon: {fileID: 2800000, guid: 3f915b7da1c09a14bb24f08fc9d7481f, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -816,7 +816,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: b90a8033d23673947ac349a61a21f719, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 894aa5f2b96c2fb42bb63d2c1c72140a, type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 0
   spritePackerPolicy: 
@@ -966,7 +966,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0

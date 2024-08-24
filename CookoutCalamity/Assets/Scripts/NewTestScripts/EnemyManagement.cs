@@ -7,6 +7,8 @@ public class EnemyManagement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] enemy1;
     public GameObject[] enemy2;
+    public GameObject[] enemy3;
+    public GameObject[] enemy4;
 
     public List<GameObject> enemies = new List<GameObject>();
 
@@ -15,6 +17,8 @@ public class EnemyManagement : MonoBehaviour
     {
         enemies.AddRange(enemy1);
         enemies.AddRange(enemy2);
+        enemies.AddRange(enemy3);
+        enemies.AddRange(enemy4);
     }
     public GameObject GetRandom()
     {

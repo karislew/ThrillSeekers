@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SiblingPickUp : MonoBehaviour
 {
@@ -11,10 +12,30 @@ public class SiblingPickUp : MonoBehaviour
     public Vector3 Direction { get; set; }
 
     private GameObject itemHolding;
+    PlayerInputActions playerControls;
+    private InputAction grab;
+
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
+
+    private void OnEnable()
+    {
+        grab = playerControls.Player.PickUpKey;
+        grab.Enable();
+    }
+
+    private void OnDisable()
+    {
+        grab.Disable();
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        bool isEPressed = grab.triggered;
+        //if (Input.GetKeyDown(KeyCode.E))
+        if (isEPressed)
         {
             if (itemHolding)
             {

@@ -230,7 +230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &128816329719379573
 RectTransform:
   m_ObjectHideFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   optionsMenuUI: {fileID: 0}
+  tutorialMenuUI: {fileID: 0}
 --- !u!1 &2150513687480341847
 GameObject:
   m_ObjectHideFlags: 0
