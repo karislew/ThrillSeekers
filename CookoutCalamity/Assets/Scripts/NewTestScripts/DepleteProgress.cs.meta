@@ -3,7 +3,9 @@ guid: 48d10ca1292554d95b1f7f0b52314e67
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - progressBar: {instanceID: 0}
+  - swipe: {fileID: 8300000, guid: 3d848ec63fe3bda47b853349cea924a9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -212,9 +212,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   siblingSpot: {fileID: 7074299419208760054}
   siblingPosition: {fileID: 0}
-  positionsManager: {fileID: 0}
   speechUI: {fileID: 0}
   arguing: {fileID: 0}
+  uiFill: {fileID: 0}
+  uiTimer: {fileID: 0}
+  Duration: 0
   range: 5.88
   enemyTag: Enemy
 --- !u!114 &2063267928586309073

@@ -7,6 +7,7 @@ public class WayPointManagement : MonoBehaviour
     // Start is called before the first frame update
     public Transform[] waypoints;
     public Transform[] waypoints2;
+    public Transform[] waypoints3;
 
     public List<Transform[]> paths = new List<Transform[]>();
 
@@ -14,6 +15,7 @@ public class WayPointManagement : MonoBehaviour
     {
         paths.Add(waypoints);
         paths.Add(waypoints2);
+        paths.Add(waypoints3);
  
     }
     
