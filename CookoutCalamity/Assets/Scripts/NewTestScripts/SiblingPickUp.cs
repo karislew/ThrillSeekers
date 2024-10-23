@@ -15,11 +15,15 @@ public class SiblingPickUp : MonoBehaviour
     private GameObject itemHolding;
     PlayerInputActions playerControls;
     private InputAction grab;
+    public bool tableInteract = false;
+   
 
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+       
     }
+ 
 
     private void OnEnable()
     {
@@ -62,6 +66,8 @@ public class SiblingPickUp : MonoBehaviour
                 itemHolding.transform.position = holdSpot.position;
                 itemHolding.transform.parent = transform;
                 interaction.OnPickedUp();
+                tableInteract=true;
+               // tableInteract.siblingPickup==true;
                 //itemHolding.GetComponent<Outline>().enabled = false;
 
                 AudioSource.PlayClipAtPoint(audiopickup, transform.position, 0.5f);
@@ -83,6 +89,8 @@ public class SiblingPickUp : MonoBehaviour
                 interaction.OnDropped();
 
                 AudioSource.PlayClipAtPoint(audiodrop, transform.position, 0.5f);
+                tableInteract=false;
+                //tableInteract.siblingPickup==false;
             }
 
             itemHolding = null;
