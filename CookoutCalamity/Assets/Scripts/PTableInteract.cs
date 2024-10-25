@@ -17,6 +17,9 @@ public class PTableInteract : MonoBehaviour
     private Animator animator;
     private bool tableSetUp;
     private bool isSpaceHeld;
+    public bool tableInteract;
+    private SiblingPickUp siblingPickup;
+    
     //private AudioSource table_sfx;
     //public AudioClip fork;
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
@@ -29,6 +32,7 @@ public class PTableInteract : MonoBehaviour
         animator = GetComponent<Animator>();
         //table_sfx = GetComponent<AudioSource>();
     }
+  
     private void OnEnable()
     {
         space =playerControls.Player.SpaceKey;
@@ -43,6 +47,7 @@ public class PTableInteract : MonoBehaviour
 
     void Start()
     {
+        siblingPickup = GetComponent<SiblingPickUp>();
         //poof.SetActive(false);
         currentProgress = minProgress;
         progressBar.maxValue = maxProgress;
@@ -55,8 +60,10 @@ public class PTableInteract : MonoBehaviour
         bool isSpaceHeld = space.ReadValue<float>() >0.1f;
         // if (inTrig && Input.GetKey(KeyCode.Space))
         currentProgress = progressBar.value;
-        if (inTrig && isSpaceHeld)
+        
+        if (inTrig && isSpaceHeld && siblingPickup.tableInteract == false )
         {
+            
             //poof.SetActive(true);
             if (regenCoroutine == null)
             {
@@ -68,6 +75,7 @@ public class PTableInteract : MonoBehaviour
         //else if (!inTrig || !Input.GetKey(KeyCode.Space))
         else if (!inTrig || !isSpaceHeld)
         {
+
             //poof.SetActive(false);
             if (regenCoroutine != null)
             {

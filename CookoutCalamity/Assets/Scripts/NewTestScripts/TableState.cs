@@ -12,6 +12,8 @@ public class TableProgress : MonoBehaviour
     private bool tableState;
     private bool inTrig = false;
     private AudioSource table_sfx;
+    private SiblingPickUp siblingPickup;
+    public GameObject player; 
    
 
     //Inputs for Keyboard and Controller
@@ -36,6 +38,7 @@ public class TableProgress : MonoBehaviour
 
     void Start()
     {
+        siblingPickup = player.GetComponent<SiblingPickUp>();
         tableState=false;
         poof.SetActive(false);
         SetTableState(0); // Start with the first state active
@@ -61,12 +64,12 @@ public class TableProgress : MonoBehaviour
                 break;
             }
         }
-        if(inTrig && isSpaceHeld && tableState==false)
+        if(inTrig && isSpaceHeld && tableState==false && siblingPickup.tableInteract == false)
         {
             poof.SetActive(true);
         }
 
-        else if (!inTrig || !isSpaceHeld || tableState==true)
+        else if (!inTrig || !isSpaceHeld || tableState==true || siblingPickup.tableInteract == true)
         {
             poof.SetActive(false);
         }
