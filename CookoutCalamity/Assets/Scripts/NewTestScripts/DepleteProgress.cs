@@ -23,7 +23,14 @@ public class DepleteProgress : MonoBehaviour
             TestMovement enemy = col.gameObject.GetComponent<TestMovement>();
             Debug.Log("Deplete value" + enemy.deplete + col.gameObject.name);
             StartCoroutine(Wait(col.gameObject, enemy.deplete));
-            table_sfx.PlayOneShot(swipe);
+            if(table_sfx==null)
+            {
+                Debug.Log("IN THIS PUSST");
+            }else
+
+            {
+                Debug.Log("AUDIO SUPPOSED TO PLAH IG");
+                table_sfx.PlayOneShot(swipe);}
         }
     }
     IEnumerator Wait(GameObject enemy,float decProgress)
