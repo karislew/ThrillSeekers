@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1739043021}
+  m_FirstSelected: {fileID: 3553440897494756062}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1732074785
@@ -682,7 +682,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2505548399549560617, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
+    - target: {fileID: 3180093554301991973, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2029292103}
@@ -690,7 +690,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Win Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 8462418653071160637, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
+    - target: {fileID: 4372433015723138175, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2029292103}
@@ -699,11 +699,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
---- !u!1 &1739043021 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3579410429763655452, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
-  m_PrefabInstance: {fileID: 1739043020}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029292102
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +827,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3553440897494756062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606592796682171557, guid: c44deaed700a14040bc7b9a35c0c195d, type: 3}
+  m_PrefabInstance: {fileID: 1739043020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
