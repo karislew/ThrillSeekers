@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class TestMovement : MonoBehaviour
 {
-    
+    private Animator animator;
+    //public Rigidbody2D rb;
+
     //array of points to walk from one place to another 
     private Transform[] waypoints;
-
-
     
     [SerializeField]
     public static TestMovement instance;
     public float speed=4;
     public float deplete = 10f;
+    private Vector2 movement;
 
     //index of current waypoint
     private int waypointIndex = 0;
+    private Vector3 direction;
 
     private Transform target;
 
@@ -25,7 +27,10 @@ public class TestMovement : MonoBehaviour
 
    //private Transform[] waypoints; 
 
-
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void Initialize(Transform[] waypoints)
     {
@@ -34,13 +39,24 @@ public class TestMovement : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    
+
+    void Update()
+    {
+        movement = transform.position;
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if (movement != Vector2.zero)
+        {
+            animator.SetFloat("Horizontal", direction.x);
+            animator.SetFloat("Vertical", direction.y);
+
+        }
+    }
 
     void FixedUpdate()
     {
         {
         //direction we have to point in order to get to waypoint
-        Vector3 direction = target.position - transform.position;
+        direction = target.position - transform.position;
         //move with this direction vector 
         //move the transform in the direction and distance of translation
 

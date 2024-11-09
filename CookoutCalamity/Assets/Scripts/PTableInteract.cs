@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class PTableInteract : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class PTableInteract : MonoBehaviour
     private bool inTrig = false;
     private Coroutine regenCoroutine;
     public GameObject poof;
-
+    private Animator animator;
+    private bool tableSetUp;
+    private bool isSpaceHeld;
+    //private AudioSource table_sfx;
+    //public AudioClip fork;
     private WaitForSeconds progressTick = new WaitForSeconds(0.2f); // Time interval between progress increments
 
     PlayerInputActions playerControls;
@@ -21,6 +26,8 @@ public class PTableInteract : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        animator = GetComponent<Animator>();
+        //table_sfx = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -55,6 +62,8 @@ public class PTableInteract : MonoBehaviour
             {
                 regenCoroutine = StartCoroutine(IncreaseProgress());
             }
+
+            animator.SetBool("tableSetUp", true);
         }
         //else if (!inTrig || !Input.GetKey(KeyCode.Space))
         else if (!inTrig || !isSpaceHeld)
@@ -65,7 +74,9 @@ public class PTableInteract : MonoBehaviour
                 StopCoroutine(regenCoroutine);
                 regenCoroutine = null;
             }
-            
+
+            animator.SetBool("tableSetUp", false);
+
         }
         //progressBar.value=currentProgress;
     }
@@ -96,8 +107,16 @@ public class PTableInteract : MonoBehaviour
             
             currentProgress+=fillTableValue;
             progressBar.value = currentProgress;
-           // Debug.Log("Current Progress: " + currentProgress);
+            // Debug.Log("Current Progress: " + currentProgress);
+           
             yield return progressTick;
         }
+        // attempt at interaction queue
+        /*if (fillTableValue == 20 && isSpaceHeld)
+        
+        {
+            table_sfx.PlayOneShot(fork);
+        }
+        */
     }
 }

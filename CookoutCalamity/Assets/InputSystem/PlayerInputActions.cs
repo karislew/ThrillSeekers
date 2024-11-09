@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DebugRestart"",
+                    ""type"": ""Button"",
+                    ""id"": ""fdd99775-37ec-4095-b6a6-686f32dfbfd8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -318,6 +327,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""48543864-17d2-4ff0-a729-ef765bb8f844"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SpaceKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c4f9b9e-ed47-4cdd-8f6b-6dc09c3fd01c"",
+                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SpaceKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7fe8b4ce-9a0d-44a9-8840-2065438c88c8"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -335,6 +366,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""PickUpKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6298907d-3160-4901-915f-e7533729985f"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""DebugRestart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c5d46d0-9a3e-42d4-9f72-b3eeaca5001d"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""DebugRestart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -712,10 +765,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc"",
-                    ""path"": ""*/{Submit}"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -821,17 +874,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""afc756a3-16a6-40ee-8f89-47e3d413c7b6"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""38c99815-14ea-4617-8627-164d27641299"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
@@ -904,6 +946,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""EscapeKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""afc756a3-16a6-40ee-8f89-47e3d413c7b6"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -980,6 +1033,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_SpaceKey = m_Player.FindAction("SpaceKey", throwIfNotFound: true);
         m_Player_PickUpKey = m_Player.FindAction("PickUpKey", throwIfNotFound: true);
+        m_Player_DebugRestart = m_Player.FindAction("DebugRestart", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1059,6 +1113,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_SpaceKey;
     private readonly InputAction m_Player_PickUpKey;
+    private readonly InputAction m_Player_DebugRestart;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1068,6 +1123,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @SpaceKey => m_Wrapper.m_Player_SpaceKey;
         public InputAction @PickUpKey => m_Wrapper.m_Player_PickUpKey;
+        public InputAction @DebugRestart => m_Wrapper.m_Player_DebugRestart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1092,6 +1148,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUpKey.started += instance.OnPickUpKey;
             @PickUpKey.performed += instance.OnPickUpKey;
             @PickUpKey.canceled += instance.OnPickUpKey;
+            @DebugRestart.started += instance.OnDebugRestart;
+            @DebugRestart.performed += instance.OnDebugRestart;
+            @DebugRestart.canceled += instance.OnDebugRestart;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1111,6 +1170,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUpKey.started -= instance.OnPickUpKey;
             @PickUpKey.performed -= instance.OnPickUpKey;
             @PickUpKey.canceled -= instance.OnPickUpKey;
+            @DebugRestart.started -= instance.OnDebugRestart;
+            @DebugRestart.performed -= instance.OnDebugRestart;
+            @DebugRestart.canceled -= instance.OnDebugRestart;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1306,6 +1368,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnSpaceKey(InputAction.CallbackContext context);
         void OnPickUpKey(InputAction.CallbackContext context);
+        void OnDebugRestart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

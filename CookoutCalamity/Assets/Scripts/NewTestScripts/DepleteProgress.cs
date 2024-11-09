@@ -5,20 +5,25 @@ using UnityEngine.UI;
 
 public class DepleteProgress : MonoBehaviour
 {
-
+   
     public Slider progressBar;
     //public GameObject enemyPrefab;
     //public float decProgress = 3;
+    private AudioSource table_sfx;
+    public AudioClip swipe;
 
-
+    private void Awake()
+    {
+        table_sfx = GetComponent<AudioSource>();
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy")
         {
             TestMovement enemy = col.gameObject.GetComponent<TestMovement>();
             Debug.Log("Deplete value" + enemy.deplete + col.gameObject.name);
-            StartCoroutine(Wait(col.gameObject,enemy.deplete));
-            
+            StartCoroutine(Wait(col.gameObject, enemy.deplete));
+            table_sfx.PlayOneShot(swipe);
         }
     }
     IEnumerator Wait(GameObject enemy,float decProgress)

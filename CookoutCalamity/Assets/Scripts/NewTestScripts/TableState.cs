@@ -11,6 +11,8 @@ public class TableProgress : MonoBehaviour
     public Slider progressBar;       // Reference to the progress bar UI element
     private bool tableState;
     private bool inTrig = false;
+    private AudioSource table_sfx;
+   
 
     //Inputs for Keyboard and Controller
     PlayerInputActions playerControls;
@@ -18,6 +20,8 @@ public class TableProgress : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+       
+        
     }
     private void OnEnable()
     {
@@ -54,7 +58,6 @@ public class TableProgress : MonoBehaviour
 
     
                 SetTableState(i);
-                
                 break;
             }
         }
@@ -95,7 +98,6 @@ public class TableProgress : MonoBehaviour
 
             //tableState=true;
             tableStates[i].SetActive(i == activeState);
-            
         }
     }
 }
