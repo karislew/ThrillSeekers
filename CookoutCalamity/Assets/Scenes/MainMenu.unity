@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 1788679805}
   - component: {fileID: 1788679804}
   - component: {fileID: 1788679807}
+  - component: {fileID: 1788679808}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -421,7 +422,7 @@ AudioSource:
   m_GameObject: {fileID: 1788679803}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -749117662280255290, guid: eeb10e7788b46f24ead13525f6246399, type: 2}
   m_audioClip: {fileID: 8300000, guid: ebeaa30119c8a5a499d6292d4ee8e457, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -508,6 +509,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1788679808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788679803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1792015786
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,11 +631,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!1 &2006274986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4935791374094126080, guid: 4086225562dc81841b942e990754d3b6, type: 3}
-  m_PrefabInstance: {fileID: 583115631332877472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &583115631332877472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,22 +639,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3388434064060568793, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3921163234821696812, guid: 4086225562dc81841b942e990754d3b6, type: 3}
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
-      propertyPath: pauseMenuUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
-      propertyPath: startMenuUI
-      value: 
-      objectReference: {fileID: 2006274986}
-    - target: {fileID: 5680856586483657479, guid: 4086225562dc81841b942e990754d3b6, type: 3}
-      propertyPath: eventSystemUI
-      value: 
-      objectReference: {fileID: 1792015788}
     - target: {fileID: 6978459807531153255, guid: 4086225562dc81841b942e990754d3b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -695,7 +727,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7539673512627806501, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1601137679574263221, guid: 4086225562dc81841b942e990754d3b6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

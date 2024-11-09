@@ -7,12 +7,10 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
     public void LoadMainMenu()
     {
         Debug.Log("Loading main menu. . .");
         LevelManager.Instance.LoadScene("MainMenu", "CircleWipe");
-        //SceneManager.LoadScene("Karis");
         Time.timeScale = 1f;
     }
 
@@ -21,7 +19,7 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Loading game scene. . .");
         LevelManager.Instance.LoadScene("2dCookout (3 Path)", "CircleWipe");
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        NewPauseMenu.GameIsPaused = false;
     }
 
     public void LoadWinMenu()
@@ -34,5 +32,10 @@ public class SceneLoader : MonoBehaviour
     {
         Debug.Log("Loading lose scene. . .");
         LevelManager.Instance.LoadScene("LoseMenu", "CircleWipe");
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game. . .");
+        Application.Quit();
     }
 }

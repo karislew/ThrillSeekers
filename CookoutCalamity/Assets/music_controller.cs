@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class music_controller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private PauseMenu pause_script;
     private AudioSource theme;
 
     private void Awake()
@@ -20,7 +18,7 @@ public class music_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.GameIsPaused == true)
+        if (NewPauseMenu.GameIsPaused == true)
         {
             theme.Pause();
         }
