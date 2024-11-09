@@ -15,11 +15,18 @@ public class SiblingPickUp : MonoBehaviour
     private GameObject itemHolding;
     PlayerInputActions playerControls;
     private InputAction grab;
+    public bool tableInteract = false;
+    private GameObject pickUpItem;
+
+  
+   
 
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+       
     }
+ 
 
     private void OnEnable()
     {
@@ -40,35 +47,45 @@ public class SiblingPickUp : MonoBehaviour
         {
             if (itemHolding)
             {
+                
                 DropItem();
             }
             else
             {
+       
                 PickUpItem();
             }
         }
     }
 
+    
     void PickUpItem()
     {
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, 0.4f, pickUpMask);
-        if (pickUpItem)
+
+        //Collider2D pickUpItem = Physics2D.OverlapCircle(drawCircle.transform.position + Direction, .4f, pickUpMask);
+        //if (pickUpItem && pickUpItem.gameObject.tag == "Sibling")
+        if(pickUpItem!=null)
         {
+            
             Interactions interaction = pickUpItem.GetComponent<Interactions>();
             
             if (interaction != null && interaction.CanBePickedUp)
             {
-                itemHolding = pickUpItem.gameObject;
+                //itemHolding = pickUpItem.gameObject;
+                itemHolding = pickUpItem;
                 itemHolding.transform.position = holdSpot.position;
                 itemHolding.transform.parent = transform;
                 interaction.OnPickedUp();
+                tableInteract=true;
+               // tableInteract.siblingPickup==true;
                 //itemHolding.GetComponent<Outline>().enabled = false;
 
                 AudioSource.PlayClipAtPoint(audiopickup, transform.position, 0.5f);
             }
         }
     }
-
+    
+   
     void DropItem()
     {
         if (itemHolding != null)
@@ -83,9 +100,35 @@ public class SiblingPickUp : MonoBehaviour
                 interaction.OnDropped();
 
                 AudioSource.PlayClipAtPoint(audiodrop, transform.position, 0.5f);
+                tableInteract=false;
+                //tableInteract.siblingPickup==false;
             }
 
             itemHolding = null;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Sibling"))
+        {
+            pickUpItem = other.gameObject;
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Sibling"))
+        {
+            if(pickUpItem == other.gameObject)
+            {
+                pickUpItem = null;
+
+            }
+
+        }
+    }
+
+ 
+
 }
