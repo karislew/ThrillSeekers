@@ -80,6 +80,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebd26e79-52be-4fa4-87d4-96aff953ea92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -388,6 +397,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""DebugRestart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""212fce22-9576-4001-99ed-efb1f4d0bc74"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1034,6 +1054,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_SpaceKey = m_Player.FindAction("SpaceKey", throwIfNotFound: true);
         m_Player_PickUpKey = m_Player.FindAction("PickUpKey", throwIfNotFound: true);
         m_Player_DebugRestart = m_Player.FindAction("DebugRestart", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1114,6 +1135,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SpaceKey;
     private readonly InputAction m_Player_PickUpKey;
     private readonly InputAction m_Player_DebugRestart;
+    private readonly InputAction m_Player_Dash;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1124,6 +1146,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @SpaceKey => m_Wrapper.m_Player_SpaceKey;
         public InputAction @PickUpKey => m_Wrapper.m_Player_PickUpKey;
         public InputAction @DebugRestart => m_Wrapper.m_Player_DebugRestart;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1151,6 +1174,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @DebugRestart.started += instance.OnDebugRestart;
             @DebugRestart.performed += instance.OnDebugRestart;
             @DebugRestart.canceled += instance.OnDebugRestart;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1173,6 +1199,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @DebugRestart.started -= instance.OnDebugRestart;
             @DebugRestart.performed -= instance.OnDebugRestart;
             @DebugRestart.canceled -= instance.OnDebugRestart;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1369,6 +1398,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnSpaceKey(InputAction.CallbackContext context);
         void OnPickUpKey(InputAction.CallbackContext context);
         void OnDebugRestart(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

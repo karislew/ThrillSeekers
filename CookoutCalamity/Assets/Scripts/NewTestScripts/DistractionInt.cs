@@ -161,6 +161,15 @@ public class DistractionInt : MonoBehaviour
         target.position = endPosition;
     }
 
+    void OnDrawGizmos()
+   {
+       Gizmos.color = Color.red;
+       Gizmos.DrawWireSphere(transform.position,range);
+
+
+   }
+
+
 /*
     IEnumerator Wait(GameObject nearestEnemy, Transform siblingPosition)
     {
