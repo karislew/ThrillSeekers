@@ -16,6 +16,9 @@ public class SiblingPickUp : MonoBehaviour
     PlayerInputActions playerControls;
     private InputAction grab;
     public bool tableInteract = false;
+    private GameObject pickUpItem;
+
+  
    
 
     private void Awake()
@@ -44,25 +47,32 @@ public class SiblingPickUp : MonoBehaviour
         {
             if (itemHolding)
             {
+                
                 DropItem();
             }
             else
             {
+       
                 PickUpItem();
             }
         }
     }
 
+    
     void PickUpItem()
     {
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, 0.4f, pickUpMask);
-        if (pickUpItem)
+
+        //Collider2D pickUpItem = Physics2D.OverlapCircle(drawCircle.transform.position + Direction, .4f, pickUpMask);
+        //if (pickUpItem && pickUpItem.gameObject.tag == "Sibling")
+        if(pickUpItem!=null)
         {
+            
             Interactions interaction = pickUpItem.GetComponent<Interactions>();
             
             if (interaction != null && interaction.CanBePickedUp)
             {
-                itemHolding = pickUpItem.gameObject;
+                //itemHolding = pickUpItem.gameObject;
+                itemHolding = pickUpItem;
                 itemHolding.transform.position = holdSpot.position;
                 itemHolding.transform.parent = transform;
                 interaction.OnPickedUp();
@@ -74,7 +84,8 @@ public class SiblingPickUp : MonoBehaviour
             }
         }
     }
-
+    
+   
     void DropItem()
     {
         if (itemHolding != null)
@@ -96,4 +107,28 @@ public class SiblingPickUp : MonoBehaviour
             itemHolding = null;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Sibling"))
+        {
+            pickUpItem = other.gameObject;
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Sibling"))
+        {
+            if(pickUpItem == other.gameObject)
+            {
+                pickUpItem = null;
+
+            }
+
+        }
+    }
+
+ 
+
 }
