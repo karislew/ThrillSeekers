@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
    private SiblingPickUp pickUp;
 
 
-   private float dashPower = 24f;
-   private float dashCooldown= 1f;
+   public float dashPower = 24f;
+   public float dashCooldown= 1f;
    private bool canDash = true;
    private bool isDashing;
-   private float dashingTime = .1f;
+   public float dashingTime = .1f;
 
 
 
