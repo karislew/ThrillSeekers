@@ -41462,7 +41462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314552633295080900, guid: e77bc471da979aa42902dda8c5154167, type: 3}
       propertyPath: remainingTime
-      value: 15
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 314552633295080900, guid: e77bc471da979aa42902dda8c5154167, type: 3}
       propertyPath: countdownDisplay
