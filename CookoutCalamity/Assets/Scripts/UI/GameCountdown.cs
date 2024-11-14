@@ -17,6 +17,7 @@ public class GameCountdown : MonoBehaviour
    private NewPauseMenu pauseMenu_script;
    private EnemySpawn enemySpawner_script;
    public GameObject gameManager,player, pause;
+   public TMP_Text countdownDisplay;
 
 
    private PTableInteract currentProgress_script;
@@ -26,6 +27,8 @@ public class GameCountdown : MonoBehaviour
    public AudioClip countdown;
    private bool gameEnded = false;  // Flag to prevent repeated scene loads
    private Animator animator;
+   public int countdownTime;
+   private bool countStart = false;
   
 
 
@@ -87,7 +90,8 @@ public class GameCountdown : MonoBehaviour
            if (timer > delay && !gameEnded)
            {
                CountDownClock();
-       }
+            }
+        
        }
    }
 
@@ -117,9 +121,12 @@ public class GameCountdown : MonoBehaviour
                playerTable_script.enabled = false;
                playerSibling_script.enabled = false;
            }
+         
        }
 
+        
 
+       
        // Handle win/lose conditions once the timer hits zero or the progress bar is full
        if (remainingTime == 0)
        {
@@ -134,7 +141,15 @@ public class GameCountdown : MonoBehaviour
        // Update timer text (ensure it never shows negative time)
        int minutes = Mathf.FloorToInt(remainingTime / 60);
        int seconds = Mathf.FloorToInt(remainingTime % 60);
+       
        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+       if(seconds == 5 && minutes == 0 && countStart == false)
+       {
+        
+        countdownDisplay.gameObject.SetActive(true);
+        countStart= true;
+        StartCoroutine(CountdownEnd());
+       }
    }
 
 
@@ -182,5 +197,20 @@ public class GameCountdown : MonoBehaviour
        SceneManager.LoadScene(screenName);
        gameEnded = true;
    }
+
+   IEnumerator CountdownEnd()
+   {
+     while(countdownTime>0)
+     {
+        countdownDisplay.text= countdownTime.ToString();
+        yield return new WaitForSeconds(1f);
+        countdownTime-=1;
+
+     }
+     countdownDisplay.text= "END";
+
+     //countdownDisplay.gameObject.SetActive(false);
+   }
+
 }
 
