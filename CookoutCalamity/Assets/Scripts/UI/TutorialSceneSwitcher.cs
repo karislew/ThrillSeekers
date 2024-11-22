@@ -22,6 +22,7 @@ public class TutorialSceneSwitcher : MonoBehaviour
 
     private void Start()
     {
+       
         // selecting the first tutorial button only works if this code is called in the start. Update selects it but navigation gets stuck.
         if (tutorialMenuUI.activeSelf)
         {
@@ -34,17 +35,31 @@ public class TutorialSceneSwitcher : MonoBehaviour
         //index = 0;
         //index = sceneContainers[index].GetHashCode();
         currentScene = SceneManager.GetActiveScene();
-        sceneName = currentScene.ToString();
+        Debug.Log("Current Scene " + currentScene.name);
+        
+        
         
         if (sceneContainers[index] != sceneName)
         {
             //index = sceneContainers[index].GetHashCode();
         }
+        for (int i=0; i<sceneContainers.Length;i+=1)
+        {
+          
+            if(sceneContainers[i] == currentScene.name)
+            {
+                index = i;
+                break;
+
+            }
+        }
         
     }
 
+
     private void Update()
     {
+       
         if (index >= sceneContainers.Length)
         {
             index = sceneContainers.Length;
@@ -70,6 +85,7 @@ public class TutorialSceneSwitcher : MonoBehaviour
             {
                 SceneManager.LoadScene(sceneContainers[index]);
                 
+            
             }
             else
             {
