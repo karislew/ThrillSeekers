@@ -88,7 +88,11 @@ public class NewPauseMenu : MonoBehaviour
         playerMove_script.enabled = false;
         playerTable_script.enabled = false;
         playerSibling_script.enabled = false;
-        
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+
     }
 
     public void Resume()
@@ -106,6 +110,6 @@ public class NewPauseMenu : MonoBehaviour
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //set a new selected game object
-        //EventSystem.current.SetSelectedGameObject(optionsCloseButton);
+        //EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }   
 }
