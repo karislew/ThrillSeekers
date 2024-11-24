@@ -11,12 +11,16 @@ public class PlayerMovement : MonoBehaviour
 
    //setting public move speed variable
    public float moveSpeed= 5f;
+   public Vector2 moveDirection;
 
 
    //getting rigid body which will help move player
    public Rigidbody2D rb;
    private Animator animator;
    private bool isMoving;
+   public float startDashTime = 1f;
+   float currentDashTime;
+   public float dashSpeed = 1f;
 
 
    //storing the (x,y) input
@@ -37,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
    private bool canDash = true;
    private bool isDashing;
    public float dashingTime = .1f;
+   
 
 
 
@@ -128,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
        }
       
    }
+   
 
 
    void FixedUpdate()
@@ -140,14 +146,36 @@ public class PlayerMovement : MonoBehaviour
        //moves rigid body to new position
        //current position plus movement
        //multiple by time to get a constant movement speed
-       rb.MovePosition(rb.position + movement * moveSpeed *  Time.fixedDeltaTime);
+       //rb.MovePosition(rb.position + movement * moveSpeed *  Time.fixedDeltaTime);
+       //print("movement x " + movement.x + "movement y " + movement.y);
+       rb.velocity = new Vector2(movement.x * moveSpeed, movement.y*moveSpeed);
    }
 
 
+   IEnumerator Dash(Vector2 Direction)
+   {
+        canDash= false;
+        isDashing = true;
+        currentDashTime = startDashTime;
+        while(currentDashTime > 0)
+        {
+            currentDashTime-=Time.deltaTime;
+            rb.velocity = Direction * dashPower; 
+            yield return null;
+        }
+        rb.velocity= new Vector2(0f, 0f);
+        canDash= true; 
+        isDashing=false;
+      
+   }
+   
    IEnumerator Dash()
    {
        canDash = false;
        isDashing =true;
+       Vector2 dashDirection = pickUp.Direction;
+       //rb.velocity= dashDirection *dashPower;
+       //rb.velocity = new Vector2(movement.x*10f,movement.y*10f);
        rb.MovePosition(rb.position + movement * dashPower * moveSpeed * Time.fixedDeltaTime);
        Debug.Log("DASHINGG");
        yield return new WaitForSeconds(dashingTime);
@@ -155,6 +183,7 @@ public class PlayerMovement : MonoBehaviour
        yield return new WaitForSeconds(dashCooldown);
        canDash=true;
    }
+   
 
 
   

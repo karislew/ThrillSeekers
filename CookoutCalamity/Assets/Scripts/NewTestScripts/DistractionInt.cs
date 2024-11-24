@@ -45,7 +45,7 @@ public class DistractionInt : MonoBehaviour
             target.position = Vector3.Lerp(target.transform.position,transform.position, glideDuration * Time.deltaTime);
             
             
-            Debug.Log(Vector3.Distance(target.position, transform.position));
+            //.Log(Vector3.Distance(target.position, transform.position));
             if (Vector3.Distance(target.position, transform.position) < 10f)
             {
                 
