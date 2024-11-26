@@ -12,9 +12,7 @@ public class TutorialSceneSwitcher : MonoBehaviour
 {
     public GameObject tutorialMenuUI;
     public GameObject tutorialFirstButton;
-    public GameObject[] tutorialContainers;
     public string[] sceneContainers;
-    public int currentSceneCount;
     private Scene currentScene;
     private string sceneName;
     
