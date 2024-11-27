@@ -33,13 +33,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Scenes/TutorialStep3.unity
     guid: d45023f3ebaf71d4c87147b7ae652415
   - enabled: 1
-    path: Assets/Scenes/Tutorial Scenes/TutorialStep4.unity
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep6.unity
     guid: 8a8776070c46e4a49b895a85f44b202f
   - enabled: 1
-    path: Assets/Scenes/Tutorial Scenes/TutorialStep5.unity
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep4.unity
     guid: 8bf7ff0b205622c4182c11bea1f6bc11
   - enabled: 1
-    path: Assets/Scenes/Tutorial Scenes/TutorialStep6.unity
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep5.unity
     guid: a6442106d88a2744e94e00c822156559
   - enabled: 1
     path: Assets/Scenes/Tutorial Scenes/TutorialStep7.unity
