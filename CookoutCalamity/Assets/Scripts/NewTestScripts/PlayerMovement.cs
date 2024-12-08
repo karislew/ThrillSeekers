@@ -26,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
   private bool isMoving;
   public float startDashTime = 1f;
   float currentDashTime;
-  public float dashSpeed = 1f;
+  private float dashSpeed = 5f;
+  
 
 
 
@@ -140,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
       }
       if(dashPressed && canDash)
       {
-          StartCoroutine(Dash());
+          StartCoroutine(Dash(dashSpeed));
 
 
 
@@ -208,14 +209,18 @@ public class PlayerMovement : MonoBehaviour
     
   }
  
-  IEnumerator Dash()
+  IEnumerator Dash(float dashSpeed)
   {
       canDash = false;
       isDashing =true;
       Vector2 dashDirection = pickUp.Direction;
+
       //rb.velocity= dashDirection *dashPower;
       //rb.velocity = new Vector2(movement.x*10f,movement.y*10f);
-      rb.MovePosition(rb.position + movement * dashPower * moveSpeed * Time.fixedDeltaTime);
+      //rb.MovePosition(rb.position + movement * dashPower * moveSpeed * Time.fixedDeltaTime);
+      rb.velocity = new Vector2(movement.x * moveSpeed * dashSpeed, movement.y*moveSpeed*dashSpeed);
+      animator.SetFloat("Horizontal",movement.x*dashSpeed);
+      animator.SetFloat("Vertical",movement.y*dashSpeed);
       Debug.Log("DASHINGG");
       yield return new WaitForSeconds(dashingTime);
       isDashing= false;
