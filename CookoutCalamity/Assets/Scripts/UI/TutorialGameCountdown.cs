@@ -17,9 +17,11 @@ public class TutorialGameCountdown : MonoBehaviour
    private TutorialPauseMenu TutPauseMenu_script;
    private EnemySpawn enemySpawner_script;
    public GameObject gameManager,player, pause;
+   public GameObject winImage;
+   public GameObject loseImage;
    //public TMP_Text countdownDisplay;
 
-
+   public TutorialPauseMenu tutPause_script;
    private PTableInteract currentProgress_script;
    public float delay = 0.5f;
    private float timer;
@@ -166,15 +168,18 @@ public class TutorialGameCountdown : MonoBehaviour
            {
               
                Debug.Log("You Lose!");
+                loseImage.SetActive(true);
+                //SceneManager.LoadScene("LoseMenu");
+                tutPause_script.LitePause();
 
-                SceneManager.LoadScene("LoseMenu");
-              
-           }
+            }
            // Win condition if progress bar is above the threshold
            else if (progressBar.value >= 98)
            {
-               Debug.Log("You Win!");
-                SceneManager.LoadScene("WinMenu");
+                winImage.SetActive(true);
+                Debug.Log("You Win!");
+                //SceneManager.LoadScene("WinMenu");
+                tutPause_script.LitePause();
               
            }
        }
@@ -188,8 +193,10 @@ public class TutorialGameCountdown : MonoBehaviour
        {
            gameEnded = true;  // Prevent repeated calls
            Debug.Log("You Win!");
-           SceneManager.LoadScene("WinMenu");
-       }
+           winImage.SetActive(true);
+            //SceneManager.LoadScene("WinMenu");
+            tutPause_script.LitePause();
+        }
    }
    /*IEnumerator Wait(string screenName)
    {
