@@ -9,7 +9,7 @@ public class FoliageVelocity : MonoBehaviour
         public float EaseOutTime = 0.15f;
         public float VelocityThreshold = 5f; 
 
-        private int externalInfluence = Shader.PropertyToID("_ExternalInfluence");
+        private int _externalInfluence = Shader.PropertyToID("_ExternalInfluence");
 
         public void InfluenceGrass(Material mat, float xVelocity)
         {

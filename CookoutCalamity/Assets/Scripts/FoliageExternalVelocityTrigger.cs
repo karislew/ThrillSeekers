@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoliageExternalVelocityTrigger : MonoBehaviour
 {
-    private FoliageVelocityController foliageVelocityController;
+    private FoliageVelocityController _foliageVelocityController;
 
     private GameObject _player;
 
@@ -22,7 +22,7 @@ public class FoliageExternalVelocityTrigger : MonoBehaviour
 
     private void Start()
     {
-        _player = Gameobject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
         _playerRB = _player.GetComponent<Rigidbody2D>();
         _foliageVelocityController = GetComponentInParent<FoliageVelocityController>();
 
@@ -81,6 +81,7 @@ public class FoliageExternalVelocityTrigger : MonoBehaviour
 
     private IEnumerator EaseIn(float xVelocity){
         _easeInCoroutineRunning = true;
+
 
         float elaspedTime = 0f;
         while(elaspedTime < _foliageVelocityController.EaseInTime)
