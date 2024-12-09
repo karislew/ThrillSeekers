@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoliageVelocity : MonoBehaviour
+public class FoliageVelocityController : MonoBehaviour
 {
         [Range(0f, 1f)] public float ExternalInfluenceStrength = 0.25f; 
         public float EaseInTime = 0.15f;
