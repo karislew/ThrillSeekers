@@ -225,6 +225,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3896262039506043456, guid: 4086225562dc81841b942e990754d3b6, type: 3}
   m_PrefabInstance: {fileID: 583115631332877472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1111297837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1891297673510310977, guid: 9c2655a493641c04c9aa67463a3d6610, type: 3}
+  m_PrefabInstance: {fileID: 412124212397376669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683499030
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,17 +642,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!114 &1831829528 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4149518954430097041, guid: 4086225562dc81841b942e990754d3b6, type: 3}
-  m_PrefabInstance: {fileID: 583115631332877472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1831829529 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2814161704760574730, guid: 4086225562dc81841b942e990754d3b6, type: 3}
@@ -1284,7 +1284,11 @@ PrefabInstance:
     - target: {fileID: 155410280834524982, guid: 6417c8a6c62404347866c20234ea8afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1831829528}
+      objectReference: {fileID: 1111297837}
+    - target: {fileID: 155410280834524982, guid: 6417c8a6c62404347866c20234ea8afd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
     - target: {fileID: 434787194484720069, guid: 6417c8a6c62404347866c20234ea8afd, type: 3}
       propertyPath: m_Name
       value: Controls Button
