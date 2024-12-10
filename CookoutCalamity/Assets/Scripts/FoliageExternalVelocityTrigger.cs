@@ -15,7 +15,7 @@ public class FoliageExternalVelocityTrigger : MonoBehaviour
     private bool _easeInCoroutineRunning;
     private bool _easeOutCoroutineRunning;
 
-    private int _externalInfluence = Shader.PropertyToID("_ExternalInfluence");
+    private int _externalInfluence = Shader.PropertyToID("_Externalnfluence");
 
     private float _startingxVelocity;
     private float _velocityLastFrame;
