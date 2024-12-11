@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Externalnfluence: 0.84
-    - _WindIntensity: 1.66
+    - _WindIntensity: 1.7
     - _WindScale: 0.92
     - _WindSpeed: 0.5
     - _YMaskInfluence: 2.46
