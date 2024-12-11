@@ -9,10 +9,10 @@ public class EnemyManagement : MonoBehaviour
     public GameObject[] enemy2;
     public GameObject[] enemy3;
     public GameObject[] enemy4;
-    public AudioClip mom;
-    public AudioClip dad;
-    public AudioClip aunt;
-    public AudioClip uncle;
+    //public AudioClip mom;
+    //public AudioClip dad;
+    //public AudioClip aunt;
+    //public AudioClip uncle;
     
 
     public List<GameObject> enemies = new List<GameObject>();

@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject tutorialMenuUI7;
     public GameObject tutorialMenuUI8;
 
-        // The Next button will be selected first upon menu activation
+    // The Next button will be selected first upon menu activation
     public GameObject tutorialFirstButton1;
     public GameObject tutorialFirstButton2;
     public GameObject tutorialFirstButton3;
@@ -237,6 +237,4 @@ public class PauseMenu : MonoBehaviour
         //set a new selected game object
         EventSystem.current.SetSelectedGameObject(optionsCloseButton);
     }
-
-
 }
