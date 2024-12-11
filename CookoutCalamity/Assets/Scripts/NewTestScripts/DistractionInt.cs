@@ -45,7 +45,7 @@ public class DistractionInt : MonoBehaviour
             target.position = Vector3.Lerp(target.transform.position,transform.position, glideDuration * Time.deltaTime);
             
             
-            Debug.Log(Vector3.Distance(target.position, transform.position));
+            //Debug.Log(Vector3.Distance(target.position, transform.position));
             if (Vector3.Distance(target.position, transform.position) < 10f)
             {
                 
@@ -160,6 +160,15 @@ public class DistractionInt : MonoBehaviour
         // Ensure the target snaps exactly to the final position at the end
         target.position = endPosition;
     }
+
+    void OnDrawGizmos()
+   {
+       Gizmos.color = Color.red;
+       Gizmos.DrawWireSphere(transform.position,range);
+
+
+   }
+
 
 /*
     IEnumerator Wait(GameObject nearestEnemy, Transform siblingPosition)

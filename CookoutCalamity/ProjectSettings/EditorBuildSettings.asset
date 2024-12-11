@@ -18,9 +18,33 @@ EditorBuildSettings:
     path: Assets/Scenes/LoseMenu.unity
     guid: c2d729d546d8fd44cb75758b2ece1fe8
   - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
-    guid: 7f6a2ae9ec9da4e478acfbccdc419f9a
-  - enabled: 1
     path: Assets/Scenes/2dCookout (3 Path).unity
     guid: 38a8a8ad5fb25564f9e90065c7f62dc3
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialBase.unity
+    guid: a7d90e6a180d8a04397c698729ea7f86
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep1.unity
+    guid: 74e5fca020b5d5145b79c24fa4705a9d
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep2.unity
+    guid: 10363250c8bc02d49996594fda02d1df
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep3.unity
+    guid: d45023f3ebaf71d4c87147b7ae652415
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep4.unity
+    guid: 8a8776070c46e4a49b895a85f44b202f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep5.unity
+    guid: 8bf7ff0b205622c4182c11bea1f6bc11
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep6.unity
+    guid: a6442106d88a2744e94e00c822156559
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep7.unity
+    guid: 165cb1684593ff54fa63eae4ccbca22f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scenes/TutorialStep8.unity
+    guid: abeeb4ff27f31734aa713f376b6f3c6c
   m_configObjects: {}
