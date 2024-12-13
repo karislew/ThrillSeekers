@@ -720,6 +720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controls Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 3643085547866175137, guid: 9c2655a493641c04c9aa67463a3d6610, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4203749429227659374, guid: 9c2655a493641c04c9aa67463a3d6610, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1013,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: UnityEngine.UI.Selectable, UnityEngine.UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6114822582291377989, guid: 4086225562dc81841b942e990754d3b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88ae608febb873d498ac7705447d6903, type: 3}
     - target: {fileID: 6960088598877249765, guid: 4086225562dc81841b942e990754d3b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
