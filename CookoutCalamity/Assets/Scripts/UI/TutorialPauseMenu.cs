@@ -21,6 +21,7 @@ public class TutorialPauseMenu : MonoBehaviour
     private SiblingPickUp playerSibling_script;
     public GameObject player;
     public SceneLoader sceneLoader_script;
+    public TutorialGameCountdown tutCountdown_script;
 
 
     // The first button selected when you pause the game
@@ -88,7 +89,7 @@ public class TutorialPauseMenu : MonoBehaviour
         }
     }
 
-    void Pause()
+    public void Pause()
     {
         Debug.Log("Pausing game. . .");
         Time.timeScale = 0f;
@@ -114,9 +115,13 @@ public class TutorialPauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         //optionsMenuUI.SetActive(false);
         //tutorialSwiter_Script.tutorialMenuUI.SetActive(false);
+        nextButton.interactable = false;
+        prevButton.interactable = false;
         playerMove_script.enabled = true;
         playerTable_script.enabled = true;
         playerSibling_script.enabled = true;
+        tutCountdown_script.winImage.SetActive(false);
+        tutCountdown_script.loseImage.SetActive(false);
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -128,5 +133,45 @@ public class TutorialPauseMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         //pauseOnStart = true;
+    }
+
+    //For the win and lose tutorial scenes specifically.
+    //Took out the UI menu enable.
+    public void LitePause()
+    {
+        Debug.Log("Lite Pausing game. . .");
+        Time.timeScale = 0f;
+        //GameIsPaused = true;
+        nextButton.interactable = true;
+        prevButton.interactable = true;
+        playerMove_script.enabled = false;
+        playerTable_script.enabled = false;
+        playerSibling_script.enabled = false;
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+
+    }
+
+    //For the win and lose tutorial scenes specifically.
+    //Took out the UI menu enable.
+    public void LiteResume()
+    {
+        Debug.Log("Lite Resuming game. . .");
+        Time.timeScale = 1f;
+        //GameIsPaused = false;
+        tutCountdown_script.winImage.SetActive(false);
+        tutCountdown_script.loseImage.SetActive(false);
+        nextButton.interactable = false;
+        prevButton.interactable = false;
+        playerMove_script.enabled = true;
+        playerTable_script.enabled = true;
+        playerSibling_script.enabled = true;
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        //EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 }
