@@ -16,6 +16,8 @@ public class GameCountdown : MonoBehaviour
    private SiblingPickUp playerSibling_script;
    private NewPauseMenu pauseMenu_script;
    private EnemySpawn enemySpawner_script;
+   //public DepleteProgress depleteProgress_script;
+   private PTableInteract pTable_script;
    public GameObject gameManager,player, pause;
    public TMP_Text countdownDisplay;
 
@@ -43,6 +45,7 @@ public class GameCountdown : MonoBehaviour
        playerSibling_script = player.GetComponent<SiblingPickUp>();
        enemySpawner_script = gameManager.GetComponent<EnemySpawn>();
        pauseMenu_script = pause.GetComponent<NewPauseMenu>();
+       pTable_script = player.GetComponent<PTableInteract>();
       
       
       
@@ -207,7 +210,10 @@ public class GameCountdown : MonoBehaviour
         countdownTime-=1;
 
      }
-     countdownDisplay.text= "END";
+     countdownDisplay.text= "STOP";
+     pTable_script.enabled= false;
+     EndGame();
+      
 
      //countdownDisplay.gameObject.SetActive(false);
    }
