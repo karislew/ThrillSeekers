@@ -82,7 +82,7 @@ public class PTableInteract : MonoBehaviour
                 StopCoroutine(regenCoroutine);
                 regenCoroutine = null;
             }
-
+            poof.SetActive(false);
             animator.SetBool("tableSetUp", false);
 
         }
@@ -115,6 +115,7 @@ public class PTableInteract : MonoBehaviour
             
             currentProgress+=fillTableValue;
             progressBar.value = currentProgress;
+            poof.SetActive(true);
             // Debug.Log("Current Progress: " + currentProgress);
            
             yield return progressTick;

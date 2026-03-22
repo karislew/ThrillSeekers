@@ -66,12 +66,12 @@ public class TableProgress : MonoBehaviour
         }
         if(inTrig && isSpaceHeld && tableState==false && siblingPickup.tableInteract == false)
         {
-            poof.SetActive(true);
+            //poof.SetActive(true);
         }
 
         else if (!inTrig || !isSpaceHeld || tableState==true || siblingPickup.tableInteract == true)
         {
-            poof.SetActive(false);
+            //poof.SetActive(false);
         }
         
     }
